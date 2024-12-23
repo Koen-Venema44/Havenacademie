@@ -27,3 +27,32 @@ modals.forEach(modal => {
         }
     });
 });
+
+
+// database
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
+    authDomain: "havenacademie.firebaseapp.com",
+    databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "havenacademie",
+    storageBucket: "havenacademie.firebasestorage.app",
+    messagingSenderId: "344623421086",
+    appId: "1:344623421086:web:62019190a8697cd466cd8f"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  var database = firebase.database();
+
+  function save() {
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+
+    database.ref('users/' + username).set ({
+        username : username,
+        email : email
+    })
+
+    alert('saved');
+  }
