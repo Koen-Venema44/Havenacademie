@@ -41,22 +41,17 @@ const firebaseConfig = {
     appId: "1:344623421086:web:62019190a8697cd466cd8f"
   };
 
-    firebase.initializeApp(firebaseConfig);
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase();
 
-  var database = firebase.database();
+  let login = document.getElementById("submitbutton");
+  let username = document.getElementById("username").value;
+  let email = document.getElementById("email").value;
 
-  submit = document.getElementById("submitbutton");
-
-  submit.addEventListener('click', save());
-
-  function save() {
-    var username = document.getElementById("username").value;
-    var email = document.getElementById("email").value;
-
-    database.ref('users/' + username).set ({
-        username : username,
-        email : email
-    })
-
-    alert('saved');
+  function Submit() {
+      set(ref(db, 'users/' + UserId), {
+          username : username, 
+          email : email
+      }) 
   }
