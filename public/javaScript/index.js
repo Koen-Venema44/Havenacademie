@@ -45,6 +45,10 @@ const firebaseConfig = {
 
   var database = firebase.database();
 
+  submit = document.getElementById("submitbutton");
+
+  submit.addEventListener('click', save());
+
   function save() {
     var username = document.getElementById("username").value;
     var email = document.getElementById("email").value;
