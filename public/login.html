@@ -35,41 +35,31 @@
             <div class="login-userinfo">
                 <input type="text" class="logininput" placeholder="Username" id="username" name="username" required>
                 <input type="text" class="logininput" placeholder="Email" id="email" name="email" required>
-                <button class="loginbutton" type="submit" id="submitbutton" name="submitbutton"> Log In</button>
+                <button class="loginbutton" type="submit" id="submitbutton" name="submitbutton" onclick="writeUserData()"> Log In</button>
             </div>
         </div>
 
         <script type="module">
-            // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://havenacademie-default-rtdb.europe-west1.firebase.app/";
-            import { getDatabase, set, ref} from "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app/";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
+            import { getDatabase, ref, set } from "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app/";
 
-            // Your web app's Firebase configuration
+            // TODO: Replace the following with your app's Firebase project configuration
+            // See: https://firebase.google.com/docs/web/learn-more#config-object
             const firebaseConfig = {
-            apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
-            authDomain: "havenacademie.firebaseapp.com",
-            databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "havenacademie",
-            storageBucket: "havenacademie.firebasestorage.app",
-            messagingSenderId: "344623421086",
-            appId: "1:344623421086:web:62019190a8697cd466cd8f"
+            databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app/"
             };
 
-// Initialize Firebase
+            // Initialize Firebase
             const app = initializeApp(firebaseConfig);
-            const db = getDatabase();
+            const database = getDatabase(app);
+            const username = document.getElementById("username");
+            const email = document.getElementById("email");
 
-            let login = document.getElementById("submitbutton");
-            let username = document.getElementById("username").value;
-            let email = document.getElementById("email").value;
-
-            function Submit() {
-                set(ref(db, 'users/' + UserId), {
-                    username : username, 
-                    email : email
-                }) 
+            function writeUserData(userId, name, email) {
+                set(ref(db, 'users/' + userId), {
+                    username: name,
+                    email: email
+                });
             }
                         
           </script>
