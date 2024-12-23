@@ -62,14 +62,14 @@
             const app = initializeApp(firebaseConfig);
             const db = getDatabase(app);
 
-            submit = document.getElementById("submitbutton");
+            const submit = document.getElementById("submitbutton");
+            const username = document.getElementById("username");
+            const email = document.getElementById("email");
             
             submit.addEventListener('click', writeUserData);
 
             function writeUserData(userId, name, email) {
             const db = getDatabase();
-            const username = document.getElementById("username");
-            const email = document.getElementById("email");
             set(ref(db, 'users/' + userId), {
               username: name,
               email: email
