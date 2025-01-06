@@ -42,7 +42,7 @@
 
         <script type="module">
           import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-          import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+          import { getDatabase, ref, set, push } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
             // TODO: Replace the following with your app's Firebase project configuration
             // See: https://firebase.google.com/docs/web/learn-more#config-object
             const firebaseConfig = {
@@ -59,7 +59,7 @@
             const database = getDatabase(app);
 
             const writeData = document.getElementById("submitbutton");
-            
+
             const form = document.getElementById("login-container");
               form.addEventListener("submit", (e) => {
                 e.preventDefault(); // Prevent form default submission
