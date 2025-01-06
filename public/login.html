@@ -36,7 +36,7 @@
                 <input type="text" class="logininput" placeholder="Username" id="username" required>
                 <input type="text" class="logininput" placeholder="Email" id="email" required>
                 <input type="password" class="logininput" placeholder="Password" id="password" required>
-                <button class="loginbutton" type="submit" id="submitbutton"> Log In</button>
+                <button class="loginbutton" type="submit" id="submitbutton" > Log In</button>
             </div>
           </form>
 
@@ -56,16 +56,17 @@
 
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
-            const database = getDatabase(app);
-            const username = document.getElementById("username").value;
-            const mail = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+
 
             const writeData = document.getElementById("submitbutton");
-            writeData.addEventListener("click", writeUserData());
-
-            function writeUserData(userId, name, email, password) {
-                set ( ref(database, '/users' + userId), {
+            writeData.addEventListener("click", (e) => {
+              e.preventDefault();
+              
+              const database = getDatabase(app);
+              const username = document.getElementById("username").value;
+              const mail = document.getElementById("email").value;
+              const password = document.getElementById("password").value;
+                set ( ref(database, '/users/' + userId), {
                   username : name,
                   mail : email,
                   password : password
@@ -73,7 +74,8 @@
                 } )
 
                 alert("Data Saved");
-            } 
+            });
+
                         
           </script>
         <script src="javaScript/index.js"></script>
