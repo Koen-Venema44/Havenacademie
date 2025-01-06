@@ -28,16 +28,16 @@
   </head>
   <body>
    
-        <div class="login-container">
+        <form class="login-container" id="login-container">
             <div class="loginheader">
                 <p class="login-header-text"> Log In</p>
             </div>
             <div class="login-userinfo">
-                <input type="text" class="logininput" placeholder="Username" id="username" name="username" required>
-                <input type="text" class="logininput" placeholder="Email" id="email" name="email" required>
+                <input type="text" class="logininput" placeholder="Username" id="username" required>
+                <input type="password" class="logininput" placeholder="Email" id="email" required>
                 <button class="loginbutton" type="submit" id="submitbutton" name="submitbutton"> Log In</button>
             </div>
-        </div>
+          </form>
 
         <script type="module">
           import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
