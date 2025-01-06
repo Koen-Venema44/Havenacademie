@@ -62,12 +62,11 @@
             writeData.addEventListener("click", (e) => {
               e.preventDefault();
 
-              var userId = hiddenId.value;
               const database = getDatabase(app);
               const username = document.getElementById("username").value;
               const mail = document.getElementById("email").value;
               const password = document.getElementById("password").value;
-                set ( ref(database, '/users/' + userId), {
+                set ( ref(database, '/users/'), {
                   username : name,
                   mail : email,
                   password : password
