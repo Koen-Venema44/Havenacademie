@@ -35,7 +35,7 @@
             <div class="login-userinfo">
                 <input type="text" class="logininput" placeholder="Username" id="username" name="username" required>
                 <input type="text" class="logininput" placeholder="Email" id="email" name="email" required>
-                <button class="loginbutton" type="submit" id="submitbutton" name="submitbutton" onclick="writeUserData()"> Log In</button>
+                <button class="loginbutton" type="submit" id="submitbutton" name="submitbutton"> Log In</button>
             </div>
         </div>
 
@@ -55,6 +55,9 @@
             const database = getDatabase(app);
             const username = document.getElementById("username").value;
             const email = document.getElementById("email").value;
+
+            const writeData = document.getElementById("submitbutton");
+            writeData.addEventListener("click", writeUserData());
 
             function writeUserData(userId, name, email) {
                 set(ref(database, 'users/' + userId), {
