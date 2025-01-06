@@ -54,18 +54,20 @@
             const database = getDatabase(app);
             const username = document.getElementById("username").value;
             const mail = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
 
             const writeData = document.getElementById("submitbutton");
             writeData.addEventListener("click", writeUserData());
 
-            function writeUserData(userId, name, email) {
-                set(ref(database, 'users/' + userId), {
-                    username: name,
-                    email: email
-                });
+            function writeUserData(userId, name, email, password) {
+                database.ref('users/' + userId).set ( {
+                  username : name,
+                  mail : email,
+                  password : password
 
-                username.reset();
-                mail.reset();
+                } )
+
+                alert("Data Saved");
             } 
                         
           </script>
