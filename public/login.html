@@ -56,30 +56,34 @@
 
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
-
+            const database = getDatabase(app);
 
             const writeData = document.getElementById("submitbutton");
-            writeData.addEventListener("click", writeUserData);
+            
+            const form = document.getElementById("login-container");
+              form.addEventListener("submit", (e) => {
+                e.preventDefault(); // Prevent form default submission
 
+                // Retrieve input values
+                const username = document.getElementById("username").value;
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
 
-            function writeUserData(userId, name, email) {
-              e.preventDefault();
-
-              const database = getDatabase(app);
-              const username = document.getElementById("username").value;
-              const mail = document.getElementById("email").value;
-              const password = document.getElementById("password").value;
-
-                set ( ref(database, '/users/' + userId), {
-                  username : name,
-                  mail : email, 
-                  password : password
-                } )
-
-                alert("data saved");
-            }
-
-                        
+                // Write data to Firebase
+                const userRef = push(ref(database, "/users"));
+                set(userRef, {
+                  username: username,
+                  email: email,
+                  password: password
+                })
+                  .then(() => {
+                    alert("Data saved successfully!");
+                    form.reset(); // Clear form inputs
+                  })
+                  .catch((error) => {
+                    alert("Error: " + error.message);
+                  });
+              });                        
           </script>
         <script src="javaScript/index.js"></script>
   </body>
