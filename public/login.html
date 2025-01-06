@@ -60,7 +60,7 @@
             writeData.addEventListener("click", writeUserData());
 
             function writeUserData(userId, name, email, password) {
-                set ( ref(database, '/users', userId, name, email, password), {
+                set ( ref(database, '/users' + userId), {
                   username : name,
                   mail : email,
                   password : password
