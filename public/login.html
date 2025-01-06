@@ -61,7 +61,8 @@
             const writeData = document.getElementById("submitbutton");
             writeData.addEventListener("click", (e) => {
               e.preventDefault();
-              
+
+              var userId = hiddenId.value;
               const database = getDatabase(app);
               const username = document.getElementById("username").value;
               const mail = document.getElementById("email").value;
