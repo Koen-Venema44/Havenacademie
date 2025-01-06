@@ -42,8 +42,6 @@
         <script type="module">
           import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
           import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
-
-
             // TODO: Replace the following with your app's Firebase project configuration
             // See: https://firebase.google.com/docs/web/learn-more#config-object
             const firebaseConfig = {
@@ -54,7 +52,7 @@
             const app = initializeApp(firebaseConfig);
             const database = getDatabase(app);
             const username = document.getElementById("username").value;
-            const email = document.getElementById("email").value;
+            const mail = document.getElementById("email").value;
 
             const writeData = document.getElementById("submitbutton");
             writeData.addEventListener("click", writeUserData());
@@ -64,7 +62,10 @@
                     username: name,
                     email: email
                 });
-            }
+
+                username.value = "";
+                mail.value = "";
+            } 
                         
           </script>
         <script src="javaScript/index.js"></script>
