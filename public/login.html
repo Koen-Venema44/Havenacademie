@@ -59,22 +59,23 @@
 
 
             const writeData = document.getElementById("submitbutton");
-            writeData.addEventListener("click", (e) => {
-              e.preventDefault();
+            writeData.addEventListener("click", writeUserData);
+
+
+            function writeUserData(userId, name, email, password) {
+            writeUserData.preventDefault();
 
               const database = getDatabase(app);
               const username = document.getElementById("username").value;
               const mail = document.getElementById("email").value;
               const password = document.getElementById("password").value;
-                set ( ref(database, '/users/'), {
+                set ( ref(database, '/users/' + userId), {
                   username : name,
-                  mail : email,
+                  mail : email, 
                   password : password
 
                 } )
-
-                alert("Data Saved");
-            });
+            }
 
                         
           </script>
