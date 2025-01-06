@@ -40,8 +40,9 @@
         </div>
 
         <script type="module">
-            import { initializeApp } from "https://havenacademie-default-rtdb.europe-west1.firebase.app";
-            import { getDatabase, ref, set } from "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app";
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+          import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+
 
             // TODO: Replace the following with your app's Firebase project configuration
             // See: https://firebase.google.com/docs/web/learn-more#config-object
@@ -52,11 +53,11 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const database = getDatabase(app);
-            const username = document.getElementById("username");
-            const email = document.getElementById("email");
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
 
             function writeUserData(userId, name, email) {
-                set(ref(db, 'users/' + userId), {
+                set(ref(database, 'users/' + userId), {
                     username: name,
                     email: email
                 });
