@@ -1,33 +1,33 @@
-const buttons = document.querySelectorAll('.popup-button');
 
-// Voeg een klik-eventlistener toe aan elke knop
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Haal de ID van het doelmodaal op
-        const modalId = button.getAttribute('data-target');
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.style.display = 'flex'; // Toon het modaal
-        }
-    });
-});
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+import { getDatabase, ref, set, push } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+// TODO: Replace the following with your app's Firebase project configuration
+  // See: https://firebase.google.com/docs/web/learn-more#config-object
+  const firebaseConfig = {
+    apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
+    authDomain: "havenacademie.firebaseapp.com",
+    projectId: "havenacademie",
+    messagingSenderId: "344623421086",
+    appId: "1:344623421086:web:62019190a8697cd466cd8f",
+    databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app"
+  };
 
-// Sluiten van modals
-const modals = document.querySelectorAll('.modal');
-modals.forEach(modal => {
-    const closeBtn = modal.querySelector('.close');
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none'; // Verberg het modaal
-    });
-
-    // Sluiten als je buiten het modaal klikt
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-});
+    const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
 
 
-// database
 
+    // functions 
+
+    // validate functions
+
+
+
+
+      // functions for login
+
+      export function write() {
+        
+      }

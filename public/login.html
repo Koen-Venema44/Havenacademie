@@ -62,9 +62,7 @@
             const form = document.getElementById("login-container");
               form.addEventListener("submit", (e) => {
                 e.preventDefault(); // Prevent form default submission
-
-
-                // get input data
+              // get input data
                 const username = document.getElementById("username").value;
                 const email = document.getElementById("email").value;
                 const password = document.getElementById("password").value;
@@ -90,37 +88,40 @@
                   .catch((error) => {
                     alert("Error: " + error.message);
                   });
-              });
+                      });
 
-              function validateEmail(email) {
-                var expression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      function validateEmail(email) {
+        var expression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-                if (expression.test(email) == true) {
-                  // if email is good
-                  return true
-                } else {
-                  // if email is not good
-                  return false
-                }
-              }
+        if (expression.test(email) == true) {
+          // if email is good
+          return true
+        } else {
+          // if email is not good
+          return false
+        }
+      }
 
-              function validatePassword(password) {
-                if (password.length <= 6) {
-                  return false
-                } else {
-                  return true
-                }
-              }
+      function validatePassword(password) {
+        if (password.length <= 6) {
+          return false
+        } else {
+          return true
+        }
+      }
 
-              function validateField() {
-                if (field == null) {
-                  return false
-                } else if (field <= 0) {
-                  return false
-                } else {
-                  return true
-                }
-              }
+      function validateField() {
+        if (field == null) {
+          return false
+        } else if (field <= 0) {
+          return false
+        } else {
+          return true
+        }
+      }
+                  
+
+              
               
           </script>
         <script src="javaScript/index.js"></script>
