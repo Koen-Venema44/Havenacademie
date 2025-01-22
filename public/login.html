@@ -18,6 +18,8 @@
     <script defer src="/__/firebase/11.1.0/firebase-analytics-compat.js"></script>
     <script defer src="/__/firebase/11.1.0/firebase-remote-config-compat.js"></script>
     <script defer src="/__/firebase/11.1.0/firebase-performance-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
@@ -58,32 +60,28 @@
             const app = initializeApp(firebaseConfig);
             const database = getDatabase(app);
             const auth = getAutch(app);
-
             const form = document.getElementById("login-container");
+
               form.addEventListener("submit", (e) => {
-                e.preventDefault(); // Prevent form default submission
-              // get input data
+
                 const email = document.getElementById("email").value;
                 const password = document.getElementById("password").value;
-
-
-                // Write data to Firebase
+               
                 signInWithEmailAndPassword(auth, email, password)
                   .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
+                    window.location.replace("index.html");
                     // ...
                   })
                   .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    alert("wrong email or password");
                   });
-                      });
 
                   
 
-              
+              });
               
           </script>
         <script src="javaScript/index.js"></script>
