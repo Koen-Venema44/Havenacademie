@@ -71,12 +71,16 @@
                     const user = userCredential.user;
                     if (parentEmail(email) == true) {
                       window.location.replace("parent.html");
+                      sessionStorage.setItem('isUnlocked', true);
                     } else if (studentEmail(email) == true) {
                       window.location.replace("index.html");
+                      sessionStorage.setItem('isUnlocked', true);
                     } else if (teacherEmail(email) == true) {
                       window.location.replace("teacher.html");
+                      sessionStorage.setItem('isUnlocked', true);
                     } else if (providerEmail(email) == true) {
                       window.location.replace("provider.html");
+                      sessionStorage.setItem('isUnlocked', true);
                     } else {
                       alert("something went wrong");
                       return
