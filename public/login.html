@@ -35,13 +35,13 @@
             <div class="login-userinfo">
               <input type="text" class="logininput" placeholder="Email" id="email" required>
               <input type="password" class="logininput" placeholder="Password" id="password" required>
-              <button class="loginbutton" type="submit" id="submitbutton" > Log In</button>
+              <button class="loginbutton" id="submitbutton" > Log In</button>
             </div>
           </form>
 
         <script type="module">
-          import { initializeApp } from "https://www.gstatic.com/firebasejs/13.29.1/firebase-app.js";
-          import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.29.1/firebase-auth.js";
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+          import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
           // TODO: Replace the following with your app's Firebase project configuration
             // See: https://firebase.google.com/docs/web/learn-more#config-object
             const firebaseConfig = {
@@ -74,6 +74,7 @@
                   .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
+                    console.log(errorMessage);
 
                     alert("wrong credentials");
                   });
