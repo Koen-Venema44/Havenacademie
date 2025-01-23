@@ -69,8 +69,19 @@
                   .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    alert("login succesfull");
-                    window.location.replace("index.html");
+                    if (parentEmail(email) == true) {
+                      window.location.replace("parent.html");
+                    } else if (studentEmail(email) == true) {
+                      window.location.replace("index.html");
+                    } else if (teacherEmail(email) == true) {
+                      window.location.replace("teacher.html");
+                    } else if (providerEmail(email) == true) {
+                      window.location.replace("provider.html");
+                    } else {
+                      alert("something went wrong");
+                      return
+                    }
+                   
                     // ...
                   })
                   .catch((error) => {
@@ -85,6 +96,55 @@
 
               });
               
+              function validateEmail(email) {
+                var expression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+                if (expression.test(email) == true) {
+                  // if email is good
+                  return true
+                } else {
+                  // if email is not good
+                  return false
+                }
+              }
+
+              function parentEmail(email) {
+                var parentexpression = /^[^\s@]+@o.havenacademie.nl+$/
+
+                if (parentexpression.test(email) == true) {
+                  return true
+                } else {
+                  return false
+                }
+              }
+              function studentEmail(email) {
+                var studentexpression = /^[^\s@]+@l.havenacademie.nl+$/
+
+                if (studentexpression.test(email) == true) {
+                  return true
+                } else {
+                  return false
+                }
+              }
+              function teacherEmail(email) {
+                var teacherexpression = /^[^\s@]+@o.havenacademie.nl+$/
+
+                if (teacherexpression.test(email) == true) {
+                  return true
+                } else {
+                  return false
+                }
+              }
+              function providerEmail(email) {
+                var providerexpression = /^[^\s@]+@o.havenacademie.nl+$/
+
+                if (providerexpression.test(email) == true) {
+                  return true
+                } else {
+                  return false
+                }
+              }
+
           </script>
   </body>
 </html>
