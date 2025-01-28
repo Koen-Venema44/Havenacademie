@@ -80,16 +80,16 @@
                     // Signed in 
                     const user = userCredential.user;
                     if (parentEmail(email) == true) {
-                      window.location.replace("parent.html");
+                      window.location.replace("parent/parent.html");
                       sessionStorage.setItem('isUnlocked', true);
                     } else if (studentEmail(email) == true) {
-                      window.location.replace("index.html");
+                      window.location.replace("student/index.html");
                       sessionStorage.setItem('isUnlocked', true);
                     } else if (teacherEmail(email) == true) {
-                      window.location.replace("teacher.html");
+                      window.location.replace("teacher/teacher.html");
                       sessionStorage.setItem('isUnlocked', true);
                     } else if (providerEmail(email) == true) {
-                      window.location.replace("provider.html");
+                      window.location.replace("provider/provider.html");
                       sessionStorage.setItem('isUnlocked', true);
                     } else {
                       alert("something went wrong");
