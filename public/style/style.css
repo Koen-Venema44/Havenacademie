@@ -186,17 +186,48 @@
     font-family: 'Courier New', Courier, monospace;
   }
   /* header items  */ 
-  
-  .header_container {
-    width: 100vw;
-    height: 150px;
+  .header-container {
+    min-width: 100vw;
+    min-height: 10%;
+    max-height: 15%;
+    background-color: #50BEEE;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: auto;
+  }
+
+
+  .header-ref-container {
+    display: flex;
+    min-width: 30%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 2%;
+  } 
+
+  .header-ref {
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .header-ref-idk {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    max-width: 20%;
   }
-  
-  
-  
+
+  .header-ref-img {
+    height: 15%;
+    width: 15%;
+    margin-right: 15px;
+  }
+
   /* main container for the afterschool activities */ 
   
   .main-container {
