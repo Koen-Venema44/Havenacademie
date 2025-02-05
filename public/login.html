@@ -81,16 +81,16 @@
                     const user = userCredential.user;
                     if (parentEmail(email) == true) {
                       window.location.replace("parent/parent.html");
-                      sessionStorage.setItem('isUnlocked', true);
+                      sessionStorage.setItem('parentUnlocked', true);
                     } else if (studentEmail(email) == true) {
                       window.location.replace("student/index.html");
-                      sessionStorage.setItem('isUnlocked', true);
+                      sessionStorage.setItem('studentUnlocked', true);
                     } else if (teacherEmail(email) == true) {
                       window.location.replace("teacher/teacher.html");
-                      sessionStorage.setItem('isUnlocked', true);
+                      sessionStorage.setItem('teacherUnlocked', true);
                     } else if (providerEmail(email) == true) {
                       window.location.replace("provider/provider.html");
-                      sessionStorage.setItem('isUnlocked', true);
+                      sessionStorage.setItem('providerUnlocked', true);
                     } else {
                       alert("something went wrong");
                       return
