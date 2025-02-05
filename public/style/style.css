@@ -190,13 +190,12 @@
     min-width: 100vw;
     min-height: 10%;
     max-height: 15%;
-    background-color: #50BEEE;
+    background-color: #223C5B;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: auto;
   }
-
 
   .header-ref-container {
     display: flex;
