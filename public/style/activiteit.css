@@ -15,10 +15,13 @@
   
   .activity-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-direction: row;
-    min-width: 50%;
-    margin-top: 3%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    max-height: none;
+    min-width: 45%;
+    justify-content: center;
+    margin-top: 5%;
+    margin-left: 3%;
   }
 
   .activity:hover {background-color: #cccccc; transform: translate(2%, 2%); cursor: grab;}
@@ -28,16 +31,19 @@
     border-radius: 4px;
     padding: 5%;
     display: flex;
-    min-height: 100px;
-    max-height: 100px;
+    max-height: 50%;
+    min-width: 80%;
     max-width: 100%;
     align-items: center;
     background-color: white;
-    margin-left: 3%;
+    margin: 10px auto;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .activity-img {
     height: 96%;
+    width: auto;
   }
 
   .text-container-activity {
@@ -88,9 +94,17 @@
 
 
   @media screen and (max-width: 1000px) {
+
     .activity-container {
-        grid-template-columns: auto;
+      width: 90%;
+      column-gap: 50px;
     }
+    .activity-description-container {
+      display: none;
+    }
+
+
+
   }
 
 

@@ -1,5 +1,5 @@
 if (!sessionStorage.getItem('teacherUnlocked')) {
-    window.location.replace("login.html");
+    window.location.replace("../login.html");
 }
 if (sessionStorage.getItem('teacherUnlocked') == true) {
     if(sessionStorage.getItem('studentUnlocked') != null); {

@@ -188,7 +188,7 @@
   }
   /* header items  */ 
   .header-container {
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 10%;
     max-height: 15%;
     background-color: #223C5B;

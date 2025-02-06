@@ -13,4 +13,13 @@ if (sessionStorage.getItem('studentUnlocked') == true) {
     }
 }
 
+p = document.getElementById("p");
+p.innerHTML = '12:00-13:00'
+
+pinput = p.innerHTML;
+
+console.log(pinput);
+
+
+
 
