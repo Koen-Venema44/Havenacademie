@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/provider.css">
     <title>Welcome to Firebase Hosting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,18 +43,35 @@
     </div>
 
     <div class="main-container">
-      <form action="" class="form-container">
+      <form class="form-container" id="form-container">
         <h1 class="form-h1">Activeit</h1>
-        <div class="input-container">
+        <div class="text-input-container">
           <div class="input-main">
-            <label for="tijd-input">Titel</label>
-            <input id="tijd-input" type="text" class="activity-input" required>
+            <label class="input-label" for="text-input">Titel</label>
+            <input id="text-input" type="text" class="activity-input" placeholder="Wat wordt de titel van uw activiteit" maxlength="30" required>
           </div>
           <div class="input-main">
-            <label for="tijd-input">Locatie</label>
-            <input id="tijd-input" type="text" class="activity-input" required>
+            <label class="input-label" for="text-input">Locatie</label>
+            <input id="text-input" type="text" class="activity-input" placeholder="Waar zal uw activiteit plaatsvinden" maxlength="20" required>
           </div>
         </div>
+        <div class="time-input-container">
+          <label class="input-label" for="time-input">Begintijd</label>
+          <input id="time-input" type="time" class="time-input" required>
+        </div>
+        <div class="time-input-container">
+          <label class="input-label" for="time-input">Eindtijd</label>
+          <input id="time-input" type="time" class="time-input" required>
+        </div>
+        <div class="date-input-container">
+          <label class="input-label" for="date-input">Wat is de datum?</label>
+          <input id="date-input" class="date-input" type="date" required></input>
+        </div>
+        <div class="input-container">
+          <label class="input-label" for="text-input-description">Beschrijving</label>
+          <textarea type="text" class="text-input-description" id="text-input-description" required> </textarea>
+        </div>
+        <button class="submitbutton" type="submit">Submit</button>
       </form>
     </div>
 
