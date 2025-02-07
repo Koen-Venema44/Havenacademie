@@ -126,7 +126,7 @@
         submit.addEventListener("click", writeUserData);
 
 
-        async function writeUserData(event, activityId, activityName, activityLocation, activityTimeStart, activityTimeEnd, activityDate, activityDescription) {
+        async function writeUserData(event, activityName, activityLocation, activityTimeStart, activityTimeEnd, activityDate, activityDescription) {
           event.preventDefault(); // Corrected typo to prevent form submission
 
           const activityId = await getNextActivityId(); // Get next ID
