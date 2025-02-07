@@ -104,7 +104,7 @@
         submit.addEventListener("click", writeUserData);
 
 
-        function writeUserData(event) {
+        function writeUserData(event, activityId, activityName, activityLocation, activityTimeStart, activityTimeEnd, activityDate, activityDescription) {
           event.preventDefault(); // Corrected typo to prevent form submission
 
           // Get form values
@@ -127,14 +127,13 @@
           alert(Description);
 
           // Save to Firebase (assuming activityId is generated automatically)
-          const activityId = Date.now(); // Unique ID based on current timestamp
           set(ref(db, 'activity/' + activityId), {
-            Name,
-            Location,
-            TimeStart,
-            TimeEnd,
-            Date,
-            Description
+            Name : activityName,
+            Location : activityLocation,
+            TimeStart : activityTimeStart,
+            TimeEnd : activityTimeEnd, 
+            Date : activityDate,
+            Description : activityDescription
           })
             .then(() => {
               console.log("Data written successfully!");
