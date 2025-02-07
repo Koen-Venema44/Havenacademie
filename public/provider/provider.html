@@ -99,13 +99,38 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
+        const dbRef = ref(db, 'activity');
+
+// Function to get the number of activities and assign an ID
+          async function getNextActivityId() {
+            try {
+              const snapshot = await get(dbRef);
+              if (snapshot.exists()) {
+                const activities = snapshot.val();
+                const activityCount = Object.keys(activities).length; // Count activities
+                if (activityCount >= 30) {
+                  alert("Maximum of 30 activities reached!");
+                  return null; // Stop execution
+                }
+                return activityCount + 1; // Next available ID
+              }
+              return 1; // If no activities exist yet
+            } catch (error) {
+              console.error("Error fetching activities:", error);
+              return null;
+            }
+          }
+
         const submit = document.getElementById("submitbutton");
 
         submit.addEventListener("click", writeUserData);
 
 
-        function writeUserData(event, activityId, activityName, activityLocation, activityTimeStart, activityTimeEnd, activityDate, activityDescription) {
+        async function writeUserData(event, activityId, activityName, activityLocation, activityTimeStart, activityTimeEnd, activityDate, activityDescription) {
           event.preventDefault(); // Corrected typo to prevent form submission
+
+          const activityId = await getNextActivityId(); // Get next ID
+          if (activityId === null) return; // Stop if limit reached
 
           // Get form values
           const Name = document.getElementById("activityName").value;
@@ -118,15 +143,10 @@
           console.log("Activity Data: ", {
             Name, Location, TimeStart, TimeEnd, Date, Description
           });
-          // Log alerts
-          alert(Name);
-          alert(Location);
-          alert(TimeStart);
-          alert(TimeEnd);
-          alert(Date);
-          alert(Description);
-
           // Save to Firebase (assuming activityId is generated automatically)
+
+          const activityId = 
+
           set(ref(db, 'activity/' + activityId), {
             Name : activityName,
             Location : activityLocation,
