@@ -126,8 +126,8 @@
         submit.addEventListener("click", writeUserData);
 
 
-        async function writeUserData(event, activityName, activityLocation, activityTimeStart, activityTimeEnd, activityDate, activityDescription) {
-          event.preventDefault(); // Corrected typo to prevent form submission
+        async function writeUserData(event) { 
+          event.preventDefault(); // Prevent form submission
 
           const activityId = await getNextActivityId(); // Get next ID
           if (activityId === null) return; // Stop if limit reached
@@ -140,29 +140,26 @@
           const Date = document.getElementById("activityDate").value;
           const Description = document.getElementById("activityDescription").value;
 
-          console.log("Activity Data: ", {
-            Name, Location, TimeStart, TimeEnd, Date, Description
-          });
-          // Save to Firebase (assuming activityId is generated automatically)
+          console.log("Activity Data: ", { activityId, Name, Location, TimeStart, TimeEnd, Date, Description });
 
+          // Save to Firebase using the correct values
           set(ref(db, 'activity/' + activityId), {
-            Name : activityName,
-            Location : activityLocation,
-            TimeStart : activityTimeStart,
-            TimeEnd : activityTimeEnd, 
-            Date : activityDate,
-            Description : activityDescription
+            Name, 
+            Location, 
+            TimeStart, 
+            TimeEnd, 
+            Date, 
+            Description
           })
-            .then(() => {
-              console.log("Data written successfully!");
-              alert("Data submitted successfully!");
-            })
-            .catch((error) => {
-              console.error("Error writing data to Firebase:", error);
-              alert("Error submitting data.");
-            });
-        }
-      ;
+          .then(() => {
+            console.log("Data written successfully!");
+            alert("Data submitted successfully!");
+          })
+          .catch((error) => {
+            console.error("Error writing data to Firebase:", error);
+            alert("Error submitting data.");
+          });
+        };
     </script>
     <script src="../javaScript/aanbieder.js"></script>
   </body>
