@@ -99,9 +99,9 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
-        const form = document.getElementById("form-container"); // Correct form ID
+        const submit = document.getElementById("submitbutton");
 
-        form.addEventListener("submit ", writeUserData);
+        submit.addEventListener("click", writeUserData);
 
 
         function writeUserData(event) {
@@ -146,7 +146,6 @@
             });
         }
       ;
-        };
     </script>
     <script src="../javaScript/aanbieder.js"></script>
   </body>
