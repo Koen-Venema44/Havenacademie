@@ -2,6 +2,7 @@
     --input-label: rgb(94, 94, 94);
 }
 
+
 .main-container {
     display: flex;
     justify-content: center;
@@ -79,10 +80,10 @@
 
 .text-input-description {
     margin-top: 2%;
-    padding: 5%;
+    padding: 1%;
     border: #B0CC35 1px solid;
     border-radius: 4px;
-    min-height: 85%;
+    min-height: 100px;
     text-wrap: wrap;
 }
 
@@ -95,13 +96,10 @@
     border-radius: 4px;
 }
 
+.submitbutton:hover {background-color: #849926; cursor: grab;}
+
 .input-label {
     color: var(--input-label);
 }
 
 
-@media screen and (max-width: 750px) {
-    .header-container {
-        display: none;
-    }
-}

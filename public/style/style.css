@@ -1,12 +1,4 @@
-* {
-  font-family: "Noto Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: 550;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-
-}
+* 
   
   html, body, div, span, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -34,6 +26,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
   }
   article,aside,details,figcaption,figure,
   footer,header,hgroup,menu,nav,section {
@@ -95,15 +88,6 @@
   }
   
   /* login */ 
-  
-  body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: white;
-  }
 
   
   
@@ -188,11 +172,11 @@
   /* header items  */ 
   .header-container {
     min-width: 100%;
-    min-height: 10%;
-    max-height: 10%;
+    height: 100px;
     background-color: #223C5B;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     margin-bottom: auto;
   }
@@ -218,8 +202,6 @@
   }
 
   .header-ref:hover {color: #cccccc;}
-
-  
 
   /* main container for the afterschool activities */ 
   

@@ -120,39 +120,66 @@
     }
 </style>
     <script type="module"> 
-      // Import the functions you need from the SDKs you need
-            import { initializeApp } from "firebase/app";
-            import{ getDatabase, set, ref } from "firebase/database";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
+        import { initializeApp } from "firebase/app";
+        import { getDatabase, set, ref } from "firebase/database";
 
-            // Your web app's Firebase configuration
-            const firebaseConfig = {
-              apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
-              authDomain: "havenacademie.firebaseapp.com",
-              databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app",
-              projectId: "havenacademie",
-              messagingSenderId: "344623421086",
-              appId: "1:344623421086:web:62019190a8697cd466cd8f"
-            };
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
+          authDomain: "havenacademie.firebaseapp.com",
+          databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "havenacademie",
+          messagingSenderId: "344623421086",
+          appId: "1:344623421086:web:62019190a8697cd466cd8f"
+        };
 
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const db = getDatabase(app);
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
 
-            submit = document.getElementById("submitbutton");
-            
-            submit.addEventListener('click', writeUserData);
+        const form = document.getElementById("form-container"); // Correct form ID
 
-            function writeUserData(userId, name, email) {
-            const db = getDatabase();
-            const username = document.getElementById("username");
-            const email = document.getElementById("email");
-            set(ref(db, 'users/' + userId), {
-              username: name,
-              email: email
-            });
+        if (form) {
+            console.log("Form found, attaching event listener...");
+            form.addEventListener('submit', writeUserData);
+          } else {
+            console.error("Form with id 'form-container' not found.");
           }
+
+        form.addEventListener('submit', writeUserData);
+
+        function writeUserData(event) {
+          event.preventDefault(); // Corrected typo to prevent form submission
+
+          console.log("Form submitted.");
+
+          // Get form values
+          const Name = document.getElementById("activityName").value;
+          const Location = document.getElementById("activityLocation").value;
+          const TimeStart = document.getElementById("activityTimeStart").value;
+          const TimeEnd = document.getElementById("activityTimeEnd").value;
+          const Date = document.getElementById("activityDate").value;
+          const Description = document.getElementById("activityDescription").value;
+
+          // Log alerts
+          alert(Name);
+          alert(Location);
+          alert(TimeStart);
+          alert(TimeEnd);
+          alert(Date);
+          alert(Description);
+
+          // Save to Firebase (assuming activityId is generated automatically)
+          const activityId = Date.now(); // Unique ID based on current timestamp
+          set(ref(db, 'activity/' + activityId), {
+            Name: Name,
+            Location: Location,
+            TimeStart: TimeStart,
+            TimeEnd: TimeEnd,
+            Date: Date,
+            Description: Description
+          });
+        }
     </script>
     <script src="../javaScript/parent.js"></script>
   </body>
