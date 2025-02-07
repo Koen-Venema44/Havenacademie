@@ -47,28 +47,28 @@
         <h1 class="form-h1">Activeit</h1>
         <div class="text-input-container">
           <div class="input-main">
-            <label class="input-label" for="text-input">Titel</label>
+            <label class="input-label" for="activityName">Titel</label>
             <input id="activityName" type="text" class="activity-input" placeholder="Wat wordt de titel van uw activiteit" maxlength="30" required>
           </div>
           <div class="input-main">
-            <label class="input-label" for="text-input">Locatie</label>
+            <label class="input-label" for="activityLocation">Locatie</label>
             <input id="activityLocation" type="text" class="activity-input" placeholder="Waar zal uw activiteit plaatsvinden" maxlength="20" required>
           </div>
         </div>
         <div class="time-input-container">
-          <label class="input-label" for="time-input">Begintijd</label>
+          <label class="input-label" for="activityTimeStart">Begintijd</label>
           <input id="activityTimeStart" type="time" class="time-input" required>
         </div>
         <div class="time-input-container">
-          <label class="input-label" for="time-input">Eindtijd</label>
+          <label class="input-label" for="activityTimeEnd">Eindtijd</label>
           <input id="activityTimeEnd" type="time" class="time-input" required>
         </div>
         <div class="date-input-container">
-          <label class="input-label" for="date-input">Wat is de datum?</label>
+          <label class="input-label" for="activityDate">Wat is de datum?</label>
           <input id="activityDate" class="date-input" type="date" required></input>
         </div>
         <div class="input-container">
-          <label class="input-label" for="text-input-description">Beschrijving</label>
+          <label class="input-label" for="Description">Beschrijving</label>
           <textarea type="text" class="text-input-description" id="activityDescription" required> </textarea>
         </div>
         <button id="submitbutton" class="submitbutton" type="submit">Submit</button>
@@ -102,7 +102,6 @@
         const form = document.getElementById("form-container"); // Correct form ID
 
         form.addEventListener("submit ", writeUserData);
-            console.log("Form found, attaching event listener...");
 
 
         function writeUserData(event) {
@@ -146,7 +145,7 @@
               alert("Error submitting data.");
             });
         }
-      });
+      ;
     </script>
     <script src="../javaScript/aanbieder.js"></script>
   </body>
