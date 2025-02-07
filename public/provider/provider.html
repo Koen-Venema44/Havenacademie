@@ -80,13 +80,11 @@
 <!-- Modal 1 -->
 
     <script type="module"> 
-      // Wait for the DOM to be fully loaded before running the script
-      document.addEventListener("DOMContentLoaded", () => {
-        // Import the functions you need from Firebase SDK
-        import { initializeApp } from "firebase/app";
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "firebase/app";
         import { getDatabase, set, ref } from "firebase/database";
 
-        // Your Firebase config
+        // Your web app's Firebase configuration
         const firebaseConfig = {
           apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
           authDomain: "havenacademie.firebaseapp.com",
@@ -100,20 +98,18 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
-        const form = document.getElementById("form-container");
+        const form = document.getElementById("form-container"); // Correct form ID
 
+        form.addEventListener("submit ", writeUserData());
         if (form) {
-          console.log("Form found, attaching event listener...");
-          form.addEventListener('submit', writeUserData);
-        } else {
-          console.error("Form with id 'form-container' not found.");
-        }
+            console.log("Form found, attaching event listener...");
+            form.addEventListener('submit', writeUserData);
+          } else {
+            console.error("Form with id 'form-container' not found.");
+          }
 
         function writeUserData(event) {
-          event.preventDefault(); // Prevent form submission
-
-          // Log to make sure the function is triggered
-          console.log("Form submitted.");
+          event.preventDefault(); // Corrected typo to prevent form submission
 
           // Get form values
           const Name = document.getElementById("activityName").value;
@@ -123,33 +119,28 @@
           const Date = document.getElementById("activityDate").value;
           const Description = document.getElementById("activityDescription").value;
 
-          // Log form values
           console.log("Activity Data: ", {
             Name, Location, TimeStart, TimeEnd, Date, Description
           });
+          // Log alerts
+          alert(Name);
+          alert(Location);
+          alert(TimeStart);
+          alert(TimeEnd);
+          alert(Date);
+          alert(Description);
 
-          // Firebase write
+          // Save to Firebase (assuming activityId is generated automatically)
           const activityId = Date.now(); // Unique ID based on current timestamp
-          console.log(`Writing data to Firebase with activityId: ${activityId}`);
-
           set(ref(db, 'activity/' + activityId), {
-            Name,
-            Location,
-            TimeStart,
-            TimeEnd,
-            Date,
-            Description
-          })
-            .then(() => {
-              console.log("Data written successfully!");
-              alert("Data submitted successfully!");
-            })
-            .catch((error) => {
-              console.error("Error writing data to Firebase:", error);
-              alert("Error submitting data.");
-            });
+            Name: Name,
+            Location: Location,
+            TimeStart: TimeStart,
+            TimeEnd: TimeEnd,
+            Date: Date,
+            Description: Description
+          });
         }
-      });
     </script>
     <script src="../javaScript/aanbieder.js"></script>
   </body>
