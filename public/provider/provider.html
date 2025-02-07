@@ -80,9 +80,10 @@
 <!-- Modal 1 -->
 
     <script type="module"> 
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "firebase/app";
-        import { getDatabase, set, ref } from "firebase/database";
+      // Wait for the DOM to be fully loaded before running the script
+        // Import the functions you need from Firebase SDK
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js';
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
 
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -100,13 +101,9 @@
 
         const form = document.getElementById("form-container"); // Correct form ID
 
-        form.addEventListener("submit ", writeUserData());
-        if (form) {
+        form.addEventListener("submit ", writeUserData);
             console.log("Form found, attaching event listener...");
-            form.addEventListener('submit', writeUserData);
-          } else {
-            console.error("Form with id 'form-container' not found.");
-          }
+
 
         function writeUserData(event) {
           event.preventDefault(); // Corrected typo to prevent form submission
@@ -133,14 +130,23 @@
           // Save to Firebase (assuming activityId is generated automatically)
           const activityId = Date.now(); // Unique ID based on current timestamp
           set(ref(db, 'activity/' + activityId), {
-            Name: Name,
-            Location: Location,
-            TimeStart: TimeStart,
-            TimeEnd: TimeEnd,
-            Date: Date,
-            Description: Description
-          });
+            Name,
+            Location,
+            TimeStart,
+            TimeEnd,
+            Date,
+            Description
+          })
+            .then(() => {
+              console.log("Data written successfully!");
+              alert("Data submitted successfully!");
+            })
+            .catch((error) => {
+              console.error("Error writing data to Firebase:", error);
+              alert("Error submitting data.");
+            });
         }
+      });
     </script>
     <script src="../javaScript/aanbieder.js"></script>
   </body>
