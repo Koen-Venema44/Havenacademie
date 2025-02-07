@@ -167,7 +167,7 @@
     <script type="module"> 
       // Import the functions you need from the SDKs you need
             import { initializeApp } from "firebase/app";
-            import{ getDatabase, set, ref } from "firebase/database";
+            import{ getDatabase, set, ref, onValue } from "firebase/database";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -181,6 +181,19 @@
               appId: "1:344623421086:web:62019190a8697cd466cd8f"
             };
 
+            
+              const dbRef = ref(getDatabase());
+                get(child(dbRef, `activity/${ActivityId}`)).then((snapshot) => {
+                  if (snapshot.exists()) {
+                    snap = snapshot.val
+                    console.log(snap);
+                  } else {
+                    console.log("No data available");
+                  }
+                }).catch((error) => {
+                  console.error(error);
+                });
+      
            
     </script>
     <script src="../javaScript/index.js"></script>
