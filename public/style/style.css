@@ -26,7 +26,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
   }
   article,aside,details,figcaption,figure,
   footer,header,hgroup,menu,nav,section {

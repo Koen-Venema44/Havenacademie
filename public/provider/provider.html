@@ -71,8 +71,29 @@
           <label class="input-label" for="Description">Beschrijving</label>
           <textarea type="text" class="text-input-description" id="activityDescription" required> </textarea>
         </div>
-        <button id="submitbutton" class="submitbutton" type="submit">Submit</button>
+        <div class="button-container">
+          <button id="submitbutton" class="submitbutton" type="submit">Submit</button>
+          <button class="submitbutton buttonright "id="previewbutton">Voorbeeld Bekijken</button>
+        </div>
       </form>
+
+      <div class="activity-preview-container" id="activity-preview-container">
+        <h1 class="preview-title"> Voorbeeld Activiteit</h1>
+        <div class="details-img-container">
+          <div class="details-container">
+            <p class="details-p" id="details-p">Details:</p>
+            <p class="location-p" id="location-p"></p>
+            <p class="time-p" id="time-p"></p>
+            <p class="date-p" id="date-p"></p>
+            <p class="aanbieder-p" id="aanbieder-p"></p>
+          </div>
+          <img src="../images/voetbalpreview.png" alt="" class="preview-img">
+        </div>
+        <div class="preview-description" id="preview-description">
+          <p class="preview-description-p" id="description-p"></p>
+        </div>
+        <button class="activity-preview-goback" id="activity-preview-goback">Terug</button>
+      </div>
     </div>
 
 
@@ -98,7 +119,6 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
-
         const dbRef = ref(db, 'activity');
 
 // Function to get the number of activities and assign an ID
@@ -121,9 +141,18 @@
             }
           }
 
+        const details = document.getElementById("details-p");
         const submit = document.getElementById("submitbutton");
+        const preview = document.getElementById("previewbutton");
+        const location = document.getElementById("location-p");
+        const time = document.getElementById("time-p");
+        const date = document.getElementById("date-p");
+        const description = document.getElementById("description-p");
 
         submit.addEventListener("click", writeUserData);
+        preview.addEventListener('click', showPreview);
+
+        
 
 
         async function writeUserData(event) { 
@@ -139,6 +168,11 @@
           const TimeEnd = document.getElementById("activityTimeEnd").value;
           const Date = document.getElementById("activityDate").value;
           const Description = document.getElementById("activityDescription").value;
+
+          if (Name == "" || Location == "" || TimeStart == "" || TimeEnd == "" || Date == "" || Description == "") {
+            alert("please fill everything in");
+            return
+          }
 
           console.log("Activity Data: ", { activityId, Name, Location, TimeStart, TimeEnd, Date, Description });
 
@@ -160,7 +194,28 @@
             alert("Error submitting data.");
           });
         };
+
+        function showPreview(event) {
+          event.preventDefault();
+          location.innerText = document.getElementById("activityLocation").value;
+          time.innerText = document.getElementById("activityTimeStart").value + "-" + document.getElementById("activityTimeEnd").value;
+          date.innerText = document.getElementById("activityDate").value;
+          description.innerText = document.getElementById("activityDescription").value;
+          if (window.innerWidth <= 875) {
+            document.getElementById("activity-preview-container").classList.add("view-preview");
+            document.getElementById("form-container").classList.add("preview-mode");
+            document.getElementById("activity-preview-goback").classList.add("showgoback");
+            document.getElementById("preview-description").classList.add("marginbottom0");
+
+            document.getElementById("activity-preview-goback").addEventListener('click', () => {
+              document.getElementById("activity-preview-container").classList.remove("view-preview");
+              document.getElementById("form-container").classList.remove("preview-mode");
+              document.getElementById("activity-preview-goback").classList.remove("showgoback");
+              document.getElementById("preview-description").classList.remove("marginbottom0");
+            });
+          }
+        }
+
     </script>
-    <script src="../javaScript/aanbieder.js"></script>
   </body>
 </html>

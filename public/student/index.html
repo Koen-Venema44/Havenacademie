@@ -41,7 +41,7 @@
     </div>
   </div>
 
-  <div class="main-container">
+  <div class="main-container" id="main-container">
     <div class="activity-container">
         <a onclick="showfunction()" class="activity">
           <img class="activity-img" src="../images/voetbal.png" alt="">
@@ -182,18 +182,74 @@
             };
               const app = initializeApp(firebaseConfig);
               const db = getDatabase(app);
-              const dbRef = ref(db);
-                get(child(dbRef, `activity/${ActivityId}`)).then((snapshot) => {
+              const activitiesRef = ref(db, "activity");
+              const main = document.getElementById("main-container");
+              const descriptionContainer = document.querySelector(".activity-description-container");
+
+              get(activitiesRef)
+                .then((snapshot) => {
                   if (snapshot.exists()) {
-                    snap = snapshot.val
-                    console.log(snap);
+                    const activities = snapshot.val();
+                    displayActivities(activities);
+                    console.log(activities);
                   } else {
-                    console.log("No data available");
+                    console.log("No activities found.");
                   }
-                }).catch((error) => {
-                  console.error(error);
+                })
+                .catch((error) => {
+                  console.error("Error fetching activities:", error);
                 });
-      
+
+
+                  function displayActivities(activities) {
+                    const activityContainer = document.querySelector(".activity-container");
+                    activityContainer.innerHTML = ""; // Clear previous content
+
+                    Object.keys(activities).forEach((id) => {  // Loop through activities
+                      const activity = activities[id];
+
+                      const activityElement = document.createElement("a");
+                      activityElement.classList.add("activity");
+                      activityElement.innerHTML = `
+                        <img class="activity-img" src="../images/voetbal.png" alt="">
+                        <div class="text-container-activity">
+                          <h1 class="activity-name">${activity.Name}</h1>
+                          <div class="line"></div>
+                          <div class="p-container">
+                            <p class="p-activity">${activity.TimeStart}</p><p class="p-activity"> ${activity.TimeEnd} </p>
+                            <p class="p-activity-right">${activity.Location}</p>
+                          </div>
+                        </div>
+                      `;
+                      // Add click event to show activity details
+                      activityElement.addEventListener("click", () => {
+                        showActivityDetails(activity);
+                      });
+                      activityContainer.appendChild(activityElement);  // Add to page
+
+                      
+                      
+                    });
+                  }
+
+
+                  function showActivityDetails(activity) {
+                    const descriptionContainer = document.querySelector(".activity-description-container");
+                    descriptionContainer.innerHTML = `
+                      <h2>${activity.Name}</h2>
+                      <div class="p-container">
+                        <div class="p-container-container">
+                          <p><strong>Time:</strong> ${activity.TimeStart}</p>
+                          <p><strong>Time:</strong> ${activity.TimeEnd}</p>
+                        </div>
+                        <p><strong>Location:</strong> ${activity.Location}</p>
+                      </div>
+                      <p><strong>Description:</strong> ${activity.Description || "No description available."}</p>
+                    `;
+                  }
+
+
+              
            
     </script>
     <script src="../javaScript/index.js"></script>

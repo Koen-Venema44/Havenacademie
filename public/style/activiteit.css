@@ -67,6 +67,11 @@
     margin: auto 0 auto 0;
   }
 
+  .p-container-container {
+    display: flex;
+    flex-direction: row;
+  }
+
   .activity-name {
     font-size: 100%;
     color: black;
