@@ -77,6 +77,7 @@
               const activitiesRef = ref(db, "activity");
               const main = document.getElementById("main-container");
               const descriptionContainer = document.querySelector(".activity-description-container");
+              const sanitizedEmail = sessionStorage.getItem('loggedEmail').replace(/[.#$[\]@]/g, "_");
 
               get(activitiesRef)
                 .then((snapshot) => {
@@ -110,6 +111,7 @@
                                 <div class="description" id="description">
                                     <p class="description-p" id="description-p">${activity.Description}</p>
                                 </div>
+                                <button class="activity-choose" id="activity-choose"> Inschrijven </button>
                                 <button class="activity-goback" id="activity-goback">Terug</button>`; 
 
                                 if (window.innerWidth < 1250) {
@@ -117,6 +119,7 @@
                             document.getElementById("activity-container").classList.add("preview-mode");
                             document.getElementById("activity-goback").classList.add("showgoback");
                             document.getElementById("description").classList.add("marginbottom0");
+                            document.getElementById("activity-choose").classList.add("small");
                                 
                             
                         } else {
@@ -136,6 +139,7 @@
                                 <div class="description" id="description">
                                     <p class="description-p" id="description-p">${activity.Description}</p>
                                 </div>
+                                <button class="activity-choose" id="activity-choose"> Inschrijven </button>
                                 <button class="activity-goback" id="activity-goback">Terug</button>`;
                         }
 
@@ -144,6 +148,7 @@
                                 document.getElementById("activity-container").classList.remove("preview-mode");
                                 document.getElementById("activity-goback").classList.remove("showgoback");
                                 document.getElementById("description").classList.remove("marginbottom0");
+                                document.getElementById("activity-choose").classList.remove("small");
                             }); 
                   }
 
@@ -171,6 +176,15 @@
                       // Add click event to show activity details
                       activityElement.addEventListener("click", () => {
                         showActivityDetails(activity);
+                        const registerbutton = document.getElementById("activity-choose");
+                        registerbutton.addEventListener('click', (e) => {
+                          e.preventDefault();
+
+                          const activity = activities[id];
+                            set(ref(db, 'users/students/' + sanitizedEmail + "/" + id + "/" +'registeredActivities'), {
+                              activity
+                            }); alert('succesfull');
+                        });
                       });
                       activityContainer.appendChild(activityElement);  // Add to page
 
@@ -187,5 +201,6 @@
            
     </script>
     <script src="../javaScript/index.js"></script>
+    <script type="module" src="../javaScript/activity.js"></script>
   </body>
 </html>
