@@ -91,7 +91,11 @@
                     } else if (providerEmail(email) == true) {
                       window.location.replace("provider/provider.html");
                       sessionStorage.setItem('providerUnlocked', true);
-                    } else {
+                    } else if (email == "1@1.nl") {
+                      window.location.replace("studentname.html");
+                      sessionStorage.setItem('studentnameUnlocked', true);
+                    }
+                    else {
                       alert("something went wrong");
                       return
                     }
@@ -102,6 +106,7 @@
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     console.log(errorMessage);
+                    console.log(errorCode);
 
                     alert("wrong credentials");
                   });
@@ -158,6 +163,8 @@
                   return false
                 }
               }
+
+              
 
           </script>
   </body>

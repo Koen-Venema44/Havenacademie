@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: lightgray;
+        }
+
+    </style>
+
+
+    <form class="login-container" id="login-container">
+        <div class="loginheader">
+            <p class="login-header-text"> Havenacademie - Log In</p>
+        </div>
+        <div class="login-bar"></div>
+        <div class="login-userinfo">
+          <input type="text" class="logininput" placeholder="Email" id="email" required>
+          <input type="password" class="logininput" placeholder="Password" id="password" required>
+          <button class="loginbutton" id="submitbutton" > Log In</button>
+        </div>
+    </form>
+
+    <script type="module" src="javaScript/studentname.js"></script>
+</body>
+</html>

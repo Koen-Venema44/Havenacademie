@@ -1,3 +1,14 @@
+.header-ref-left {
+  border: none;
+}
+
+.border-ref.right {
+  border: none;
+}
+.header-ref-middle {
+  border-bottom: solid 4px #50beee;
+}
+
 .activity-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
