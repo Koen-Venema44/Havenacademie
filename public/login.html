@@ -96,16 +96,16 @@
                     // Signed in 
                     const user = userCredential.user;
                     if (parentEmail(email) == true) {
-                      window.location.replace("parent/parent.html");
+                      window.location.replace("parent/parentdashboard.html");
                       sessionStorage.setItem('parentUnlocked', true);
                     } else if (studentEmail(email) == true) {
-                      window.location.replace("student/index.html");
+                      window.location.replace("student/studentdashboard.html");
                       sessionStorage.setItem('studentUnlocked', true);
                     } else if (teacherEmail(email) == true) {
-                      window.location.replace("teacher/teacher.html");
+                      window.location.replace("teacher/teacherdashboard.html");
                       sessionStorage.setItem('teacherUnlocked', true);
                     } else if (providerEmail(email) == true) {
-                      window.location.replace("provider/provider.html");
+                      window.location.replace("provider/providerdashboard.html");
                       sessionStorage.setItem('providerUnlocked', true);
                     } else {
                       alert("something went wrong");
