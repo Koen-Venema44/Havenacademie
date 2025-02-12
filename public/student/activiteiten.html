@@ -181,7 +181,7 @@
                           e.preventDefault();
 
                           const activity = activities[id];
-                            set(ref(db, 'users/students/' + sanitizedEmail + "/" + id + "/" +'registeredActivities'), {
+                            set(ref(db, 'users/students/' + "/" + sanitizedEmail + '/' + 'registeredActivities' + "/" + id), {
                               activity
                             }); alert('succesfull');
                         });
