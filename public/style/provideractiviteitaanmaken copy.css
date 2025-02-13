@@ -3,21 +3,20 @@
     position: relative;
     height: 103px;
     object-fit: cover;
-}
-.selected-bar {
+  }
+  .selected-bar {
     align-self: stretch;
     position: relative;
     background-color: rgba(0, 200, 255, 0);
     height: 10px;
-}
-.mijn-activiteiten {
-    align-self: stretch;
+  }
+  .mijn-activiteiten {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
-}
-.activiteit-aanmaken {
+    justify-content: flex-start;
+  }
+  .activiteit-aanmaken {
     align-self: stretch;
     position: relative;
     display: flex;
@@ -25,21 +24,24 @@
     justify-content: center;
     height: 111px;
     flex-shrink: 0;
-}
-.selected-bar1 {
+    color: #fff;
+    font-family: Inter;
+  }
+  .mijn-activiteiten2 {
     align-self: stretch;
-    position: relative;
-    background-color: #00c8ff;
-    height: 10px;
-}
-.paginas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .paginas {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     gap: 50px;
-}
-.header {
+  }
+  .header {
     align-self: stretch;
     border-radius: 5px;
     background-color: #223c5b;
@@ -55,7 +57,7 @@
     flex-wrap: wrap;
     align-content: center;
     padding: 12px 25px;
-}
+  }
 .nieuwe-activiteit {
     position: relative;
     font-size: 32px;
@@ -64,24 +66,35 @@
     position: relative;
     font-weight: 600;
     display: block; /* Ensures it appears above the input */
-    margin-bottom: 5px; /* Space between label and input */
     width: fit-content;
 }
 
 .wat-wordt-de {
+    margin: 5px; /* Space between label and input */
+    padding-left: 3px;
     position: relative;
     color: #808080;
-    padding: 3px;
-    border-radius: 4px;
-    border: #ffffff 1px solid;
+    flex-grow: 1;
+    border-radius: 5px;
+    border: #b0cc35 1px solid;
     display: block; 
-    width: 90%;
-    height: 100%;
+    align-items: center;
+}
+
+.wat-wordt-de-logo {
+    margin: 5px; /* Space between label and input */
+    padding-left: 3px;
+    position: relative;
+    color: #808080;
+    flex-grow: 1;
+    border-radius: 5px;
+    border: #b0cc35 1px solid;
+    display: block; 
     align-items: center;
 }
 
 .titel-upload {
-    width: 855px;
+    width: 100%;
     border-radius: 5px;
     background-color: #fff;
     border: 1px solid #b0cc35;
@@ -94,18 +107,6 @@
     align-content: flex-start;
     padding: 8px;
     gap: 10px;
-}
-.hoeveel-mensen-zullen {
-    flex: 1;
-    position: relative;
-    color: #808080;
-}
-.hoelaat-zal-uw {
-    width: 428px;
-    position: relative;
-    color: #808080;
-    display: inline-block;
-    flex-shrink: 0;
 }
 .begintijd-upload {
     align-self: stretch;
@@ -137,8 +138,7 @@
     margin-top: -1px;
 }
 .tijd-upload {
-    width: 855px;
-    height: 92px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -148,12 +148,15 @@
     margin: 0;
 }
 .wat-wordt-de-container {
-    width: 524px;
+    margin: 5px; /* Space between label and input */
+    padding-left: 3px;
     position: relative;
     color: #808080;
-    display: inline-block;
-    height: 126px;
-    flex-shrink: 0;
+    width: 100%;
+    border-radius: 5px;
+    border: #b0cc35 1px solid;
+    display: block; 
+    align-items: center;
 }
 .voetbal-icon {
     width: 50px;
@@ -170,8 +173,27 @@
     justify-content: flex-start;
     padding: 8px;
 }
+.logo1 input {
+    display: none; /* Hide radio buttons */
+    border-radius: 5px;
+    background-color: #b0cc35;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
+}
+.logo1 img {
+    width: 50px;
+    position: relative;
+    height: 50px;
+    object-fit: cover;
+    border: 3px solid transparent; /* Default border */
+    border-radius: 10px;
+    transition: border 0.3s ease-in-out;
+}
 .logoframe {
-    width: 410px;
+    width: 100%;
     border-radius: 5px;
     background-color: #e9ecef;
     height: 133px;
@@ -184,9 +206,12 @@
     padding: 25px;
     box-sizing: border-box;
     gap: 25px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
 }
 .logo-upload {
-    width: 426px;
+    width: 100%;
     border-radius: 5px;
     background-color: #fff;
     border: 1px solid #b0cc35;
@@ -220,6 +245,10 @@
 }
 .voorbeeld-bekijken {
     position: relative;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 800;
+    border: none;
 }
 .voorbeeld-bekijken-wrapper {
     position: absolute;
@@ -246,6 +275,7 @@
 }
 .activiteit-formulier {
     flex: 1;
+    width: 50%;
     height: 965px;
     overflow: hidden;
     display: flex;
@@ -259,7 +289,7 @@
     gap: 27px 25px;
 }
 .voorbeeld-header {
-    width: 994px;
+    width: 100%;
     background-color: #b0cc35;
     height: 75px;
     display: flex;
@@ -323,7 +353,7 @@
     font-family: Inter;
 }
 .details {
-    width: 472px;
+    width: 50%;
     border-radius: 5px;
     background-color: #fff;
     border: 1px solid #b0cc35;
@@ -336,7 +366,7 @@
     padding: 39px 41px;
 }
 .image-4-icon {
-    width: 472px;
+    width: 50%;
     position: relative;
     border-radius: 5px;
     height: 240px;
@@ -387,7 +417,7 @@
     color: #000;
 }
 .voorbeeld-activiteit {
-    width: 994px;
+    width: 50%;
     height: 965px;
     display: flex;
     flex-direction: column;
@@ -424,3 +454,12 @@
     font-family: Inter;
 }
 
+@media screen and (max-width: 2000px) {
+    .activiteit-formulier {
+        width: 100%;
+    }
+
+    .voorbeeld-activiteit {
+        display: none;
+    }
+}
