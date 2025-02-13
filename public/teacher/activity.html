@@ -36,7 +36,7 @@
     </div>
     <div class="header-ref-container">
       <a class="header-ref header-ref-left" href="mijn-activiteiten.html">Mijn Activiteiten</a>
-      <a class="header-ref header-ref-middle" href="activiteiten.html">Activiteiten</a>
+      <a class="header-ref header-ref-middle" href="activitity.html">Activiteiten</a>
       <a class="header-ref header-ref-right" href="index.html">Agenda</a>
     </div>
   </div>
@@ -111,7 +111,7 @@
                                 <div class="description" id="description">
                                     <p class="description-p" id="description-p">${activity.Description}</p>
                                 </div>
-                                <button class="activity-choose" id="activity-choose"> Inschrijven </button>
+                                <button class="activity-choose" id="activity-choose"> Koppel </button>
                                 <button class="activity-goback" id="activity-goback">Terug</button>`; 
 
                                 if (window.innerWidth < 1250) {
@@ -139,7 +139,7 @@
                                 <div class="description" id="description">
                                     <p class="description-p" id="description-p">${activity.Description}</p>
                                 </div>
-                                <button class="activity-choose" id="activity-choose"> Inschrijven </button>
+                                <button class="activity-choose" id="activity-choose"> Koppel </button>
                                 <button class="activity-goback" id="activity-goback">Terug</button>`;
                         }
 
@@ -154,53 +154,73 @@
 
 
                   function displayActivities(activities) {
-                    const activityContainer = document.querySelector(".activity-container");
-                    activityContainer.innerHTML = ""; // Clear previous content
+    const activityContainer = document.querySelector(".activity-container");
+    activityContainer.innerHTML = ""; // Clear previous content
 
-                    Object.keys(activities).forEach((id) => {  // Loop through activities
-                      const activity = activities[id];
+    Object.keys(activities).forEach((id) => {  
+        const activity = activities[id];
 
-                      const activityElement = document.createElement("a");
-                      activityElement.classList.add("activity");
-                      activityElement.innerHTML = `
-                        <img class="activity-img" src="../images/voetbal.png" alt="">
-                        <div class="text-container-activity">
-                          <h1 class="activity-name">${activity.Name}</h1>
-                          <div class="line"></div>
-                          <div class="p-container">
-                            <p class="p-activity">${activity.TimeStart}</p><p class="p-activity"> ${activity.TimeEnd} </p>
-                            <p class="p-activity-right">${activity.Location}</p>
-                          </div>
-                        </div>
-                      `;
-                      // Add click event to show activity details
-                      activityElement.addEventListener("click", () => {
-                        showActivityDetails(activity);
-                        const registerbutton = document.getElementById("activity-choose");
-                        registerbutton.addEventListener('click', (e) => {
-                          e.preventDefault();
+        const activityElement = document.createElement("a");
+        activityElement.classList.add("activity");
+        activityElement.innerHTML = `
+            <img class="activity-img" src="../images/voetbal.png" alt="">
+            <div class="text-container-activity">
+                <h1 class="activity-name">${activity.Name}</h1>
+                <div class="line"></div>
+                <div class="p-container">
+                    <p class="p-activity">${activity.TimeStart}</p><p class="p-activity"> ${activity.TimeEnd} </p>
+                    <p class="p-activity-right">${activity.Location}</p>
+                </div>
+            </div>
+        `;
 
-                          const activity = activities[id];
-                            set(ref(db, 'users/students/' + sanitizedEmail + '/' + 'registeredActivities/' + id), {
-                              activity
-                            }); alert('succesfull');
-                        });
-                      });
-                      activityContainer.appendChild(activityElement);  // Add to page
+        activityElement.addEventListener("click", () => {
+            showActivityDetails(activity);
+            const registerbutton = document.getElementById("activity-choose");
+            registerbutton.addEventListener('click', (e) => {
+                e.preventDefault();
 
-                      
-                      
+                get(ref(db, 'users/teachers/' + sanitizedEmail + '/registeredActivities/'))
+                    .then((snapshot) => {
+                        if (snapshot.exists()) {
+                            const count = Object.keys(snapshot.val()).length;
+                            console.log("Number of activities:", count);
+
+                            if (count < 10) {
+                                const activity = activities[id];
+
+                                set(ref(db, 'users/teachers/' + sanitizedEmail + '/' + 'registeredActivities/' + id), activity)
+                                    .then(() => {
+                                        alert('Successful');
+                                    })
+                                    .catch((error) => {
+                                        console.error("Error saving activity:", error);
+                                    });
+
+                            } else {
+                                alert("You have reached the maximum number of activities.");
+                            }
+                        } else {
+                            // If no activities exist yet, allow adding the first one
+                            set(ref(db, 'users/teachers/' + sanitizedEmail + '/registeredActivities/' + id), activity)
+                                .then(() => {
+                                    alert('Successful');
+                                })
+                                .catch((error) => {
+                                    console.error("Error saving activity:", error);
+                                });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error fetching data:", error);
                     });
-                  }
+            });
+        });
 
-
-
-
-
-              
+        activityContainer.appendChild(activityElement);
+    }); // This closes the forEach loop
+} // This closes the displayActivities function
            
     </script>
-    <script src="../javaScript/index.js"></script>
-    <script type="module" src="../javaScript/activity.js"></script>
   </body>
 </html>

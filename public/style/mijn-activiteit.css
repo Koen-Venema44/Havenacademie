@@ -264,6 +264,21 @@ margin-top: 5%;
   margin-bottom: 20px;
 }
 
+.students-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.student-card {
+  width: 85%;
+  padding: 5%;
+  
+
+}
+
 
 
 

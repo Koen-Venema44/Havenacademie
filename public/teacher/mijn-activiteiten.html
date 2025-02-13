@@ -3,13 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../style/style.css">
+    <title>Welcome to Firebase Hosting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <title>Welcome to Firebase Hosting</title>
-
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/11.1.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -27,43 +24,48 @@
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/mijn-activiteit.css">
 
     
   </head>
   <body>
-   
-    <div class="header-container">
-      <div class="headerimg">
-        <img src="../images/havenacademie.png" style="height: 50px; width: 220px;" alt="Image not Found">
-      </div>
-      <div class="header-ref-container">
-        <a class="header-ref header-ref-left" href="mijn-activiteiten.html">Mijn Activiteiten</a>
-        <a class="header-ref header-ref-middle" href="activity.html">Activiteiten</a>
-        <a class="header-ref header-ref-right" href="teacher.html">Dashboard</a>
-      </div>
-    </div>
-  
-    <div class="main-container" id="main-container">
-      <div class="activity-container">
-      
-      </div>
-      <div class="activity-new-container">
-        <div class="search-container">
-          <h1 class="search-header"> Hallo </h1>
-          <input type="search" class="search" placeholder="Activiteit Opzoeken:">
-        </div>
-        <div class="new-activity-main">
-          <h1 class="new-activity-header"> Nieuwe Activiteiten: </h1>
-          <div class="new-activity-container">
-  
-          </div>
-        </div>
-      </div>
-    </div> 
-    
-    
-    <script module src="../javaScript/teacher.js"></script>
-    <script src="../javaScript/teacherlogin.js"></script>
 
+    <style>
+
+        .activity-description-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .details-container {
+            width: 90%;
+            margin-bottom: auto;
+        }
+    </style>
+  <div class="header-container">
+    <div class="headerimg">
+      <img src="../images/havenacademie.png" style="height: 50px; width: 220px;" alt="Image not Found">
+    </div>
+    <div class="header-ref-container">
+      <a class="header-ref header-ref-left" href="mijn-activiteiten.html">Mijn Activiteiten</a>
+      <a class="header-ref header-ref-middle" href="activity.html">Activiteiten</a>
+      <a class="header-ref header-ref-right" href="teacher.html">Dashboard</a>
+    </div>
+  </div>
+
+  <div class="main-container" id="main-container">
+    <div class="activity-container" id="activity-container">
+      
+        
+    </div>
+    <div class="activity-description-container">
+
+      
+    </div>
+  </div> 
+
+    <script type="module" src="../javaScript/mijn-activiteiten-teacher.js"></script>
+    <script src="../javaScript/teacherlogin.js"></script>
   </body>
 </html>
