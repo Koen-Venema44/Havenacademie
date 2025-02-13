@@ -1,0 +1,426 @@
+.logo-icon {
+    width: 203px;
+    position: relative;
+    height: 103px;
+    object-fit: cover;
+}
+.selected-bar {
+    align-self: stretch;
+    position: relative;
+    background-color: rgba(0, 200, 255, 0);
+    height: 10px;
+}
+.mijn-activiteiten {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.activiteit-aanmaken {
+    align-self: stretch;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 111px;
+    flex-shrink: 0;
+}
+.selected-bar1 {
+    align-self: stretch;
+    position: relative;
+    background-color: #00c8ff;
+    height: 10px;
+}
+.paginas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 50px;
+}
+.header {
+    align-self: stretch;
+    border-radius: 5px;
+    background-color: #223c5b;
+    border: 1px solid #b0cc35;
+    box-sizing: border-box;
+    height: 115px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 12px 25px;
+}
+.nieuwe-activiteit {
+    position: relative;
+    font-size: 32px;
+}
+.titel {
+    position: relative;
+    font-weight: 600;
+    display: block; /* Ensures it appears above the input */
+    margin-bottom: 5px; /* Space between label and input */
+    width: fit-content;
+}
+
+.wat-wordt-de {
+    position: relative;
+    color: #808080;
+    padding: 3px;
+    border-radius: 4px;
+    border: #ffffff 1px solid;
+    display: block; 
+    width: 90%;
+    height: 100%;
+    align-items: center;
+}
+
+.titel-upload {
+    width: 855px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #b0cc35;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 8px;
+    gap: 10px;
+}
+.hoeveel-mensen-zullen {
+    flex: 1;
+    position: relative;
+    color: #808080;
+}
+.hoelaat-zal-uw {
+    width: 428px;
+    position: relative;
+    color: #808080;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.begintijd-upload {
+    align-self: stretch;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #b0cc35;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 8px;
+    gap: 10px;
+}
+.eindtijd-upload {
+    align-self: stretch;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #b0cc35;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 8px;
+    gap: 10px;
+    margin-top: -1px;
+}
+.tijd-upload {
+    width: 855px;
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.blank-line {
+    margin: 0;
+}
+.wat-wordt-de-container {
+    width: 524px;
+    position: relative;
+    color: #808080;
+    display: inline-block;
+    height: 126px;
+    flex-shrink: 0;
+}
+.voetbal-icon {
+    width: 50px;
+    position: relative;
+    height: 50px;
+    object-fit: cover;
+}
+.logo1 {
+    border-radius: 5px;
+    background-color: #b0cc35;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
+}
+.logoframe {
+    width: 410px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    height: 133px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 25px;
+    box-sizing: border-box;
+    gap: 25px;
+}
+.logo-upload {
+    width: 426px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #b0cc35;
+    box-sizing: border-box;
+    height: 224px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 8px;
+    gap: 10px;
+}
+.fotos-videos-upload-child {
+    width: 409px;
+    position: relative;
+    height: 107px;
+}
+.activiteit-formulier1 {
+    width: 876px;
+    height: 770px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 10px;
+    text-align: left;
+}
+.voorbeeld-bekijken {
+    position: relative;
+}
+.voorbeeld-bekijken-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 90px;
+    background-color: #b0cc35;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    width: 426px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0px;
+}
+.voorbeeld-bekijken-knop {
+    width: 426px;
+    position: relative;
+    height: 40px;
+    color: #fff;
+}
+.activiteit-formulier {
+    flex: 1;
+    height: 965px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 25px 24px;
+    box-sizing: border-box;
+    gap: 27px 25px;
+}
+.voorbeeld-header {
+    width: 994px;
+    background-color: #b0cc35;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 297px;
+    box-sizing: border-box;
+}
+.logo11 {
+    width: 70px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 90px;
+    background-color: #d9d9d9;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.person-icon {
+    width: 14px;
+    position: relative;
+    height: 25px;
+}
+.div {
+    position: relative;
+    line-height: 120%;
+}
+.deelnemers1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    text-align: right;
+    color: #5d5d5d;
+}
+.voetbal-parent {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px 0px 0px;
+}
+.titel1 {
+    align-self: stretch;
+    border-radius: 90px;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: left;
+}
+.details2 {
+    font-family: Inter;
+}
+.details {
+    width: 472px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #b0cc35;
+    box-sizing: border-box;
+    height: 240px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 39px 41px;
+}
+.image-4-icon {
+    width: 472px;
+    position: relative;
+    border-radius: 5px;
+    height: 240px;
+    object-fit: cover;
+}
+.details-plaatje {
+    align-self: stretch;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+    font-size: 24px;
+}
+.kom-buiten-met {
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.beschrijving1 {
+    align-self: stretch;
+    flex: 1;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #b0cc35;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    font-size: 20px;
+}
+.beschrijvingframe {
+    align-self: stretch;
+    flex: 1;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 25px;
+    gap: 25px;
+    color: #000;
+}
+.voorbeeld-activiteit {
+    width: 994px;
+    height: 965px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 32px;
+    color: #fff;
+}
+.body {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    font-size: 22px;
+    color: #000;
+}
+.aanbieder-desktop-activiteit {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    height: 1080px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 28px;
+    color: #fff;
+    font-family: Inter;
+}
+

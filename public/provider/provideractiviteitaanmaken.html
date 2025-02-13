@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/provideractiviteitaanmaken.css">
+    <title>Welcome to Firebase Hosting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/11.1.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/11.1.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    
+  </head>
+  <body>
+    <div class="header">
+      <a href="providerdashboard.html"><img class="logo-icon" alt="Image not Found" src="../images/havenacademie.png" /></a>
+      <div class="paginas">
+          <a href="providermijnactiviteiten.html">
+              <div class="mijn-activiteiten">
+                  <div class="activiteit-aanmaken">Mijn activiteiten</div>
+                  <div class="selected-bar"></div>
+              </div>
+         </a>
+          <a href="provideractiviteitaanmaken copy.html">
+              <div class="mijn-activiteiten2">
+                  <div class="activiteit-aanmaken">Activiteit aanmaken</div>
+                  <div class="selected-bar"></div>
+              </div>
+          </a>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <form  class="form-container" id="form-container">
+        <h1 class="form-h1">Activeit</h1>
+        <div class="text-input-container">
+          <div class="input-main">
+            <label class="input-label" for="activityName">Titel</label>
+            <input id="activityName" type="text" class="activity-input" placeholder="Wat wordt de titel van uw activiteit" maxlength="30" required>
+          </div>
+          <div class="input-main">
+            <label class="input-label" for="activityLocation">Locatie</label>
+            <input id="activityLocation" type="text" class="activity-input" placeholder="Waar zal uw activiteit plaatsvinden" maxlength="20" required>
+          </div>
+        </div>
+        <div class="time-input-container">
+          <label class="input-label" for="activityTimeStart">Begintijd</label>
+          <input id="activityTimeStart" type="time" class="time-input" required>
+        </div>
+        <div class="time-input-container">
+          <label class="input-label" for="activityTimeEnd">Eindtijd</label>
+          <input id="activityTimeEnd" type="time" class="time-input" required>
+        </div>
+        <div class="date-input-container">
+          <label class="input-label" for="activityDate">Wat is de datum?</label>
+          <input id="activityDate" class="date-input" type="date" required></input>
+        </div>
+        <div class="input-container">
+          <label class="input-label" for="Description">Beschrijving</label>
+          <textarea type="text" class="text-input-description" id="activityDescription" required> </textarea>
+        </div>
+        <div class="button-container">
+          <button id="submitbutton" class="submitbutton" type="submit">Submit</button>
+          <button class="submitbutton buttonright "id="previewbutton">Voorbeeld Bekijken</button>
+        </div>
+      </form>
+
+      <div class="activity-preview-container" id="activity-preview-container">
+        <h1 class="preview-title"> Voorbeeld Activiteit</h1>
+        <div class="details-img-container">
+          <div class="details-container">
+            <p class="details-p" id="details-p">Details:</p>
+            <p class="location-p" id="location-p"></p>
+            <p class="time-p" id="time-p"></p>
+            <p class="date-p" id="date-p"></p>
+            <p class="aanbieder-p" id="aanbieder-p"></p>
+          </div>
+          <img src="../images/voetbalpreview.png" alt="" class="preview-img">
+        </div>
+        <div class="preview-description" id="preview-description">
+          <p class="preview-description-p" id="description-p"></p>
+        </div>
+        <button class="activity-preview-goback" id="activity-preview-goback">Terug</button>
+      </div>
+    </div>
+
+
+    
+    <div class="activiteit-formulier">
+      <div class="nieuwe-activiteit">Nieuwe Activiteit</div>
+      <div class="activiteit-formulier1">
+        <div class="titel-upload">
+          <div class="titel">Titel:</div>
+          <label class="input-label" for="activityName">Titel:</label>
+          <input id="activityName" type="text" class="activity-input" placeholder="Wat wordt de titel van uw activiteit?" maxlength="30" required>
+        </div>
+
+        <div class="titel-upload">
+          <div class="titel">Deelnemers:</div>
+          <div class="hoeveel-mensen-zullen">Hoeveel mensen zullen er mogen deelnemen aan uw activiteit?</div>
+          <label class="input-label" for="activityPeople">Deelnemers:</label>
+          <input id="activityPeople" type="number" class="people-input" placeholder="WHoeveel mensen zullen er mogen deelnemen aan uw activiteit?" maxlength="20" required>
+        </div>
+
+        <div class="titel-upload">
+          <div class="titel">Locatie:</div>
+          <div class="wat-wordt-de">Waar zal uw activiteit plaatsvinden?</div>
+          <label class="input-label" for="activityLocation">Locatie:</label>
+          <input id="activityLocation" type="text" class="activity-input" placeholder="Waar zal uw activiteit plaatsvinden?" maxlength="20" required>
+        </div>
+
+        <div class="tijd-upload">
+          <div class="begintijd-upload">
+            <div class="titel">Begintijd:</div>
+            <div class="hoelaat-zal-uw">Hoelaat zal uw activiteit beginnen?</div>
+            <label class="input-label" for="activityTimeStart">Begintijd</label>
+            <input id="activityTimeStart" type="time" class="time-input" required>
+          </div>
+          <div class="eindtijd-upload">
+            <div class="titel">Eindtijd:</div>
+            <div class="hoelaat-zal-uw">Hoelaat zal uw activiteit eindigen?</div>
+            <label class="input-label" for="activityTimeEnd">Eindtijd</label>
+            <input id="activityTimeEnd" type="time" class="time-input" required>
+          </div>
+        </div>
+
+        <div class="titel-upload">
+          <div class="titel">Datum:</div>
+          <div class="hoeveel-mensen-zullen">Wanneer zal uw activiteit plaatsvinden?</div>
+          <label class="input-label" for="activityDate">Wat is de datum?</label>
+          <input id="activityDate" class="date-input" type="date" required></input>
+        </div>
+
+        <div class="titel-upload">
+          <div class="titel">Beschrijving:</div>
+          <div class="wat-wordt-de-container">
+            <p class="blank-line">Wat wordt de titel van jouw activiteit?</p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="blank-line">&nbsp;</p>
+          </div>
+
+          <label class="input-label" for="Description">Beschrijving</label>
+          <textarea type="text" class="text-input-description" id="activityDescription" required> </textarea>
+        </div>
+        <div class="logo-upload">
+          <div class="titel">Logo:</div>
+          <div class="wat-wordt-de">Wat wordt de logo van uw activiteit?</div>
+          <div class="logoframe">
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Voetbal.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Koken.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Dansen.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Muziek.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Creatief.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Mindfulness.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Ambacht.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Natuur.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Coaching.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Technology.png">
+            </div>
+          </div>
+        </div>
+        
+        <div class="logo-upload">
+          <div class="titel">Foto's & Video's:</div>
+          <div class="wat-wordt-de">
+            <p class="blank-line">Wat voor foto's en/of video's komen</p>
+            <p class="blank-line">bij uw activiteit?</p>
+          </div>
+          <img class="fotos-videos-upload-child" alt="" src="Group 14.svg">
+        </div>
+      </div>
+
+      <div class="voorbeeld-bekijken-knop">
+        <div class="voorbeeld-bekijken-wrapper">
+          <div class="voorbeeld-bekijken">Voorbeeld bekijken</div>
+          <button class="submitbutton buttonright "id="previewbutton">Voorbeeld Bekijken</button>
+        </div>
+      </div>
+
+      <div class="voorbeeld-bekijken-knop">
+        <div class="voorbeeld-bekijken-wrapper">
+          <div class="voorbeeld-bekijken">Activiteit aanmaken</div>
+          <button id="submitbutton" class="submitbutton" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+    
+<!-- Modal 1 -->
+
+    <script type="module"> 
+      // Wait for the DOM to be fully loaded before running the script
+        // Import the functions you need from Firebase SDK
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js';
+        import { getDatabase, get, set, ref } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
+          authDomain: "havenacademie.firebaseapp.com",
+          databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app/",
+          projectId: "havenacademie",
+          messagingSenderId: "344623421086",
+          appId: "1:344623421086:web:62019190a8697cd466cd8f"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const dbRef = ref(db, 'activity');
+
+// Function to get the number of activities and assign an ID
+          async function getNextActivityId() {
+            try {
+              const snapshot = await get(dbRef);
+              if (snapshot.exists()) {
+                const activities = snapshot.val();
+                const activityCount = Object.keys(activities).length; // Count activities
+                if (activityCount >= 30) {
+                  alert("Maximum of 30 activities reached!");
+                  return null; // Stop execution
+                }
+                return activityCount + 1; // Next available ID
+              }
+              return 1; // If no activities exist yet
+            } catch (error) {
+              console.error("Error fetching activities:", error);
+              return null;
+            }
+          }
+
+        const details = document.getElementById("details-p");
+        const submit = document.getElementById("submitbutton");
+        const preview = document.getElementById("previewbutton");
+        const location = document.getElementById("location-p");
+        const time = document.getElementById("time-p");
+        const date = document.getElementById("date-p");
+        const description = document.getElementById("description-p");
+
+        submit.addEventListener("click", writeUserData);
+        preview.addEventListener('click', showPreview);
+
+        
+
+
+        async function writeUserData(event) { 
+          event.preventDefault(); // Prevent form submission
+
+          const activityId = await getNextActivityId(); // Get next ID
+          if (activityId === null) return; // Stop if limit reached
+
+          // Get form values
+          const Name = document.getElementById("activityName").value;
+          const Location = document.getElementById("activityLocation").value;
+          const TimeStart = document.getElementById("activityTimeStart").value;
+          const TimeEnd = document.getElementById("activityTimeEnd").value;
+          const Date = document.getElementById("activityDate").value;
+          const Description = document.getElementById("activityDescription").value;
+
+          if (Name == "" || Location == "" || TimeStart == "" || TimeEnd == "" || Date == "" || Description == "") {
+            alert("please fill everything in");
+            return
+          }
+
+          console.log("Activity Data: ", { activityId, Name, Location, TimeStart, TimeEnd, Date, Description });
+
+          // Save to Firebase using the correct values
+          set(ref(db, 'activity/' + activityId), {
+            Name, 
+            Location, 
+            TimeStart, 
+            TimeEnd, 
+            Date, 
+            Description
+          })
+          .then(() => {
+            console.log("Data written successfully!");
+            alert("Data submitted successfully!");
+          })
+          .catch((error) => {
+            console.error("Error writing data to Firebase:", error);
+            alert("Error submitting data.");
+          });
+        };
+
+        function showPreview(event) {
+          event.preventDefault();
+          location.innerText = document.getElementById("activityLocation").value;
+          time.innerText = document.getElementById("activityTimeStart").value + "-" + document.getElementById("activityTimeEnd").value;
+          date.innerText = document.getElementById("activityDate").value;
+          description.innerText = document.getElementById("activityDescription").value;
+          if (window.innerWidth <= 875) {
+            document.getElementById("activity-preview-container").classList.add("view-preview");
+            document.getElementById("form-container").classList.add("preview-mode");
+            document.getElementById("activity-preview-goback").classList.add("showgoback");
+            document.getElementById("preview-description").classList.add("marginbottom0");
+
+            document.getElementById("activity-preview-goback").addEventListener('click', () => {
+              document.getElementById("activity-preview-container").classList.remove("view-preview");
+              document.getElementById("form-container").classList.remove("preview-mode");
+              document.getElementById("activity-preview-goback").classList.remove("showgoback");
+              document.getElementById("preview-description").classList.remove("marginbottom0");
+            });
+          }
+        }
+
+    </script>
+  </body>
+</html>
