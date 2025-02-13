@@ -20,7 +20,7 @@ import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.2.0
 
 
 if (!sessionStorage.getItem('studentnameUnlocked')) {
-    window.location.replace("../login.html");
+    window.location.replace("login.html");
 }
 if (sessionStorage.getItem('studentnameUnlocked') == true) {
     if(sessionStorage.getItem('teacherUnlocked') != null); {
@@ -39,12 +39,12 @@ if (sessionStorage.getItem('studentnameUnlocked') == true) {
 
 
 const submit = document.getElementById("submitbutton");
+const registreer = document.getElementById('registreerbutton');
+submit.addEventListener('click', writeUserDataStudent);
+registreer.addEventListener('click', writeUserDataTeacher);
 
-submit.addEventListener('click', writeUserData);
 
-
-
-async function writeUserData(event) {
+async function writeUserDataStudent(event) {
     event.preventDefault(); // Prevents the form from refreshing
 
     const db = getDatabase(app);
@@ -63,3 +63,25 @@ async function writeUserData(event) {
             });
             alert("Successfully saved user data!"); 
 }
+
+async function writeUserDataTeacher(event) {
+    event.preventDefault(); // Prevents the form from refreshing
+
+    const db = getDatabase(app);
+
+    const emailInput = document.getElementById("email-teacher").value.toLowerCase();
+    const firstName = document.getElementById("first-name-teacher").value.trim();
+    const lastName = document.getElementById("last-name-teacher").value.trim();
+
+    const sanitizedEmail = emailInput.replace(/[.#$[\]@]/g, "_");
+
+
+            set(ref(db, 'users/teachers/' + sanitizedEmail), {
+                FirstName: firstName,
+                LastName : lastName,
+                Email: emailInput
+            });
+            alert("Successfully saved user data!"); 
+}
+
+
