@@ -25,10 +25,11 @@
   margin-left: 3%;
 }
 
-.activity:hover {background-color: #cccccc; transform: translate(2%, 2%); cursor: grab;}
+.activity:hover {border-color: #849926; background-color: #fdfdfd; cursor: grab;}
 
 .activity {
-  border: 1px solid #B0CC35;
+  border: 2px solid #B0CC35;
+  border-left: 5px solid #B0CC35;
   border-radius: 4px;
   padding: 5%;
   display: flex;
@@ -118,33 +119,28 @@
   font-weight: 800;
 }
 
-.details-img-container {
+.details-container {
   width: 90%;
   height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2%;
-}
-
-.details-container {
-  width: 49%;
-  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: auto;
   border-radius: 4px;
-  border: #B0CC35 1px solid;
+  border: #B0CC35 2px solid;
 }
 
-.preview-img {
-  height: auto;
-  width: 60%;
-  margin-left: 2%;
-  border: #B0CC35 1px solid;
-  border-radius: 4px;
+.details-h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 2%;
+  width: 90%;
+  border-bottom: #B0CC35 3px solid;
+  font-size: 18px;
 }
 
 .description {
@@ -255,13 +251,16 @@ margin-top: 5%;
 .activity-container-less {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
   grid-gap: 0;
 }
 
 .activity-less {
-  max-height: 200px;
+  max-height: 120px;
   margin-bottom: 20px;
+}
+
+.nostudents {
+  margin-top: 10px;
 }
 
 .students-list {
@@ -270,14 +269,19 @@ margin-top: 5%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: auto;
 }
 
 .student-card {
   width: 85%;
-  padding: 5%;
-  
-
+  padding: 20px;
+  border: 1px solid #B0CC35;
+  border-left: 5px solid #B0CC35;
+  margin-top: 20px;
+  border-radius: 4px;
 }
+
+.student-card:hover {border-color: #849926;}
 
 
 

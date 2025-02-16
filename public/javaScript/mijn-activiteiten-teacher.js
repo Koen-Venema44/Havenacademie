@@ -18,7 +18,7 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/1
     const db = getDatabase(app);
     const auth = getAuth(app);
     const sanitizedEmail = sessionStorage.getItem('loggedEmail').replace(/[.#$[\]@]/g, "_");
-    const teacherActivitiesRef = ref(db, 'users/teachers/' + sanitizedEmail + "/" + 'registeredActivities/');
+    const teacherActivitiesRef = ref(db, 'users/teachers/' + sanitizedEmail + "/" + 'registeredActivities');
     const studentActivitiesRef = ref(db, 'users/students/');
     console.log(sessionStorage.getItem('loggedEmail'));
 
@@ -37,45 +37,57 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/1
     })
 
     async function getStudentsByActivity(activityID) {
-        console.log("Fetching students for activity ID:", activityID);
         const studentsListDiv = document.getElementById("students-list");
         studentsListDiv.innerHTML = ""; // Clear previous content
     
         const snapshot = await get(studentActivitiesRef);
-        console.log(snapshot.val());
+        console.log("studentactivity", snapshot);
         if (snapshot.exists()) {
             let registeredStudents = [];
+    
             snapshot.forEach(studentSnapshot => {
-                const studentData = studentSnapshot.val();
-                console.log(studentData);
-                if (studentData.registeredactivities && studentData.registeredactivities[activityID]) {
-                    registeredStudents.push({
-                        Name: studentSnapshot.key,  // Assuming email is the key
-                        ...studentData  // Include other student details if needed
-                    });
+                const studentData = studentSnapshot.val();    
+                console.log("Registered Activities for student:", studentData);
+                if (studentData.registeredActivities) {
+                  Object.values(studentData.registeredActivities).forEach(activityEntry => {
+                    console.log("activityID", activityID);
+                    console.log('activityid', activityEntry.activity.activityId);
+                    if (activityEntry.activity.activityId == activityID) {
+                        console.log('does this even work');
+                        registeredStudents.push({
+                            Name: studentSnapshot.key,
+                            FirstName: studentData.FirstName,
+                            LastName: studentData.LastName,
+                            Email: studentData.Email
+                        });
+                    }
+                });
                 }
-
-                console.log(registeredStudents);
+    
             });
     
-            // Loop through the array and create HTML elements
-            registeredStudents.forEach(student => {
-                const studentDiv = document.createElement("div");
-                studentDiv.classList.add("student-card"); // Optional CSS class
+            // Display students in HTML
+            console.log('length', registeredStudents.length);
+            if (registeredStudents.length > 0) {
+                registeredStudents.forEach(student => {
+                    const studentDiv = document.createElement("div");
+                    studentDiv.classList.add("student-card");
     
-                studentDiv.innerHTML = `
-                    <p><strong>Email:</strong> ${student.Email}</p>
-                    <p><strong>Name:</strong> ${student.FirstName || "Unknown"}</p>
-                    <p><strong>Name:</strong> ${student.LastName || "Unknown"}</p>
-                `;
+                    studentDiv.innerHTML = `
+                        <p><strong></strong> ${student.FirstName || "Unknown"}</p>
+                        <p><strong></strong> ${student.LastName || "Unknown"}</p>
+                    `;
     
-                studentsListDiv.appendChild(studentDiv);
-            });
-    
+                    studentsListDiv.appendChild(studentDiv);
+                });
+            } else {
+                studentsListDiv.innerHTML = `<p class="nostudents">No students registered for this specific activity.</p>`;
+            }
         } else {
-            studentsListDiv.innerHTML = "<p>No students registered for this activity.</p>";
+            studentsListDiv.innerHTML = `<p class="nostudents">No students registered for this activity.</p>`;
         }
     }
+    
 
 
     function displayActivities(activities) {
@@ -116,7 +128,6 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/1
     function showActivityDetails(activity) {
         const descriptionContainer = document.querySelector(".activity-description-container");
         descriptionContainer.innerHTML = `
-            <div class="details-img-container">
                 <div class="details-container">
                     <p class="details-p" id="details-p">Details:</p>
                     <p class="location-p" id="location-p">${activity.Location}</p>
@@ -124,7 +135,7 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/1
                     <p class="date-p" id="date-p">${activity.Date}</p>
                     <p class="aanbieder-p" id="aanbieder-p"></p>
                 </div>
-            </div>
+            <h1 class="details-h1" > Ingeschreven Leerlingen </h1>
             <div class="students-list" id="students-list">
 
             </div>

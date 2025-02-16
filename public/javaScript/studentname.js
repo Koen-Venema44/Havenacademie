@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, fetchSignInMethodsForEmail } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+import { getDatabase, ref, set, update } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
           // TODO: Replace the following with your app's Firebase project configuration
             // See: https://firebase.google.com/docs/web/learn-more#config-object
             const firebaseConfig = {
@@ -77,7 +77,7 @@ async function writeUserDataTeacher(event) {
     const sanitizedEmail = emailInput.replace(/[.#$[\]@]/g, "_");
 
 
-            set(ref(db, 'users/teachers/' + sanitizedEmail), {
+            update(ref(db, 'users/teachers/' + sanitizedEmail), {
                 FirstName: firstName,
                 LastName : lastName,
                 Email: emailInput
