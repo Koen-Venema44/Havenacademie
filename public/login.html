@@ -98,16 +98,25 @@
                     if (parentEmail(email) == true) {
                       window.location.replace("parent/parentdashboard.html");
                       sessionStorage.setItem('parentUnlocked', true);
+                      sessionStorage.setItem('loggedEmail', user.email);
                     } else if (studentEmail(email) == true) {
                       window.location.replace("student/studentdashboard.html");
                       sessionStorage.setItem('studentUnlocked', true);
+                      sessionStorage.setItem('loggedEmail', user.email);
                     } else if (teacherEmail(email) == true) {
                       window.location.replace("teacher/teacherdashboard.html");
                       sessionStorage.setItem('teacherUnlocked', true);
+                      sessionStorage.setItem('loggedEmail', user.email);
                     } else if (providerEmail(email) == true) {
                       window.location.replace("provider/providerdashboard.html");
                       sessionStorage.setItem('providerUnlocked', true);
-                    } else {
+                      sessionStorage.setItem('loggedEmail', user.email);
+                    } else if (email == "1@1.nl") {
+                      window.location.replace("studentname.html");
+                      sessionStorage.setItem('studentnameUnlocked', true);
+                      sessionStorage.setItem('loggedEmail', user.email);
+                    }
+                    else {
                       alert("something went wrong");
                       return
                     }
@@ -118,6 +127,7 @@
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     console.log(errorMessage);
+                    console.log(errorCode);
 
                     alert("wrong credentials");
                   });
@@ -174,6 +184,8 @@
                   return false
                 }
               }
+
+              
 
           </script>
   </body>
