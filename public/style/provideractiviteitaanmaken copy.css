@@ -259,7 +259,7 @@
     background-color: #b0cc35;
     border: 1px solid #fff;
     box-sizing: border-box;
-    width: 426px;
+    width: 200px;
     height: 40px;
     display: flex;
     flex-direction: row;
@@ -268,7 +268,7 @@
     padding: 4px 0px;
 }
 .voorbeeld-bekijken-knop {
-    width: 426px;
+    width: 200px;
     position: relative;
     height: 40px;
     color: #fff;
@@ -437,6 +437,7 @@
     align-content: center;
     font-size: 22px;
     color: #000;
+    height: 100%;
 }
 .aanbieder-desktop-activiteit {
     width: 100%;
@@ -454,7 +455,7 @@
     font-family: Inter;
 }
 
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 875) {
     .activiteit-formulier {
         width: 100%;
     }
@@ -462,4 +463,18 @@
     .voorbeeld-activiteit {
         display: none;
     }
+}
+
+
+.view-preview {
+    display: flex;
+    width: 100%;
+}
+
+.showgoback {
+    display: flex;
+}
+
+.marginbottom0 {
+    margin-bottom: 0;
 }

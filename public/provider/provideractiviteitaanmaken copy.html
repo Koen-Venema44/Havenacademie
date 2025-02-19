@@ -52,7 +52,7 @@
       <div class="body">
         <div class="activiteit-formulier">
           <form id="form-container">
-          <div class="nieuwe-activiteit">Nieuwe Activiteit</div>
+          <div class="nieuwe-activiteit">Nieuwe activiteit aanmaken</div>
           <div class="activiteit-formulier1">
             <div class="titel-upload">
               <label class="titel" for="activityName">Titel:</label>
@@ -188,9 +188,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-      </div>
       
     
 <!-- Modal 1 -->
@@ -298,16 +295,17 @@
           time.innerText = document.getElementById("activityTimeStart").value + "-" + document.getElementById("activityTimeEnd").value;
           date.innerText = document.getElementById("activityDate").value;
           description.innerText = document.getElementById("activityDescription").value;
-          if (window.innerWidth <= 1500) {
+          
+          if (window.innerWidth <= 875) {
             document.getElementById("activity-preview-container").classList.add("view-preview");
             document.getElementById("form-container").classList.add("preview-mode");
-            document.getElementById("activity-preview-goback").classList.add("showgoback");
+        /*    document.getElementById("activity-preview-goback").classList.add("showgoback"); */
             document.getElementById("preview-description").classList.add("marginbottom0");
 
             document.getElementById("activity-preview-goback").addEventListener('click', () => {
               document.getElementById("activity-preview-container").classList.remove("view-preview");
               document.getElementById("form-container").classList.remove("preview-mode");
-              document.getElementById("activity-preview-goback").classList.remove("showgoback");
+     /*         document.getElementById("activity-preview-goback").classList.remove("showgoback"); */
               document.getElementById("preview-description").classList.remove("marginbottom0");
             });
           }

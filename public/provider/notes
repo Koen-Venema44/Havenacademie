@@ -51,3 +51,46 @@
         <button class="activity-preview-goback" id="activity-preview-goback">Terug</button>
       </div>
     </div>
+
+
+
+
+
+    <div class="voorbeeld-activiteit">
+      <div class="voorbeeld-header">
+        <div class="voorbeeld-bekijken">Voorbeeld Activiteit</div>
+      </div>
+      <div class="beschrijvingframe">
+        <div class="titel1">
+          <div class="logo11">
+            <img class="voetbal-icon" alt="" src="Voetbal.png">
+          </div>
+          <div class="voetbal-parent">
+            <div class="voorbeeld-bekijken">Voetbal</div>
+            <div class="deelnemers1">
+              <img class="person-icon" alt="" src="Person Icon.svg">
+              <div class="div">27/30</div>
+            </div>
+          </div>
+        </div>
+        <div class="details-plaatje">
+          <div class="details">
+            <div class="div">
+              <p class="blank-line">
+                <b class="details2">Details</b>
+                <span>:</span>
+              </p>
+              <p class="blank-line">Locatie: AS80</p>
+              <p class="blank-line">Tijd: 13:00 - 18:00</p>
+              <p class="blank-line">Datum: 5-2-2025</p>
+              <p class="blank-line">Aanbieder: Voetbalpraktijken</p>
+            </div>
+          </div>
+          <img class="image-4-icon" alt="" src="image 4.png">
+        </div>
+        <div class="beschrijving1">
+          <div class="kom-buiten-met">Kom buiten met vrienden voetballen voor een leuke tijd! Dit wordt gedaan op
+            voetbalvereniging AS80 met een hele veld.</div>
+        </div>
+      </div>
+    </div>
