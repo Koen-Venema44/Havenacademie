@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, fetchSignInMethodsForEmail } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+import { getDatabase, ref, set, update } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
           // TODO: Replace the following with your app's Firebase project configuration
             // See: https://firebase.google.com/docs/web/learn-more#config-object
             const firebaseConfig = {
@@ -22,7 +22,7 @@ import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.2.0
 if (!sessionStorage.getItem('studentnameUnlocked')) {
     window.location.replace("login.html");
 }
-if (sessionStorage.getItem('studentnameUnlocked') == true) {
+if (sessionStorage.getItem('studentnameUnlocked'), true) {
     if(sessionStorage.getItem('teacherUnlocked') != null); {
     sessionStorage.removeItem('teacherUnlocked');
     }
@@ -39,12 +39,12 @@ if (sessionStorage.getItem('studentnameUnlocked') == true) {
 
 
 const submit = document.getElementById("submitbutton");
-const registreer = document.getElementById('registreerbutton');
-submit.addEventListener('click', writeUserDataStudent);
-registreer.addEventListener('click', writeUserDataTeacher);
+
+submit.addEventListener('click', writeUserData);
 
 
-async function writeUserDataStudent(event) {
+
+async function writeUserData(event) {
     event.preventDefault(); // Prevents the form from refreshing
 
     const db = getDatabase(app);
@@ -63,25 +63,3 @@ async function writeUserDataStudent(event) {
             });
             alert("Successfully saved user data!"); 
 }
-
-async function writeUserDataTeacher(event) {
-    event.preventDefault(); // Prevents the form from refreshing
-
-    const db = getDatabase(app);
-
-    const emailInput = document.getElementById("email-teacher").value.toLowerCase();
-    const firstName = document.getElementById("first-name-teacher").value.trim();
-    const lastName = document.getElementById("last-name-teacher").value.trim();
-
-    const sanitizedEmail = emailInput.replace(/[.#$[\]@]/g, "_");
-
-
-            set(ref(db, 'users/teachers/' + sanitizedEmail), {
-                FirstName: firstName,
-                LastName : lastName,
-                Email: emailInput
-            });
-            alert("Successfully saved user data!"); 
-}
-
-

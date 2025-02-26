@@ -178,6 +178,7 @@
 
           // Save to Firebase using the correct values
           set(ref(db, 'activity/' + activityId), {
+            activityId,
             Name, 
             Location, 
             TimeStart, 
@@ -217,5 +218,6 @@
         }
 
     </script>
+    <script src="../javaScript/aanbieder.js"></script>
   </body>
 </html>

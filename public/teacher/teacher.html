@@ -32,16 +32,14 @@
   </head>
   <body>
    
-    <div class="main-container">
-      <div class="main-header">
-        <a class="main-header-a" href=""> SchoolRooster </a>
-        <a class="main-header-a" href=""> SchoolRooster </a>
-        <a class="main-header-a" href=""> SchoolRooster </a>
+    <div class="header-container">
+      <div class="headerimg">
+        <img src="../images/havenacademie.png" style="height: 50px; width: 220px;" alt="Image not Found">
       </div>
-      <div class="rooster">
-        <button class="popup-button" data-target="modal1">Knop 1</button>
-        <button class="popup-button" data-target="modal2">Knop 2</button>
-        <button class="popup-button" data-target="modal3">Knop 3</button>        
+      <div class="header-ref-container">
+        <a class="header-ref header-ref-left" href="mijn-activiteiten.html">Mijn Activiteiten</a>
+        <a class="header-ref header-ref-middle" href="activity.html">Activiteiten</a>
+        <a class="header-ref header-ref-right" href="teacher.html">Dashboard</a>
       </div>
     </div>
 
@@ -119,7 +117,41 @@
         font-size: 20px;
     }
 </style>
-    <script src="../javaScript/teacher.js" type="module"></script>
+    <script type="module"> 
+      // Import the functions you need from the SDKs you need
+            import { initializeApp } from "firebase/app";
+            import{ getDatabase, set, ref } from "firebase/database";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
 
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
+              authDomain: "havenacademie.firebaseapp.com",
+              databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app",
+              projectId: "havenacademie",
+              messagingSenderId: "344623421086",
+              appId: "1:344623421086:web:62019190a8697cd466cd8f"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const db = getDatabase(app);
+
+            submit = document.getElementById("submitbutton");
+            
+            submit.addEventListener('click', writeUserData);
+
+            function writeUserData(userId, name, email) {
+            const db = getDatabase();
+            const username = document.getElementById("username");
+            const email = document.getElementById("email");
+            set(ref(db, 'users/' + userId), {
+              username: name,
+              email: email
+            });
+          }
+    </script>
+    <script src="../javaScript/teacher.js"></script>
   </body>
 </html>
