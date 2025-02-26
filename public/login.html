@@ -30,24 +30,40 @@
     
   </head>
   <body>
-
-    <style>
-      body {
-        background-image: url("images/loginimg.jpg");
-      }
-    </style>
-   
-        <form class="login-container" id="login-container">
-            <div class="loginheader">
-                <p class="login-header-text"> Havenacademie - Log In</p>
-            </div>
-            <div class="login-bar"></div>
-            <div class="login-userinfo">
-              <input type="text" class="logininput" placeholder="Email" id="email" required>
-              <input type="password" class="logininput" placeholder="Password" id="password" required>
-              <button class="loginbutton" id="submitbutton" > Log In</button>
-            </div>
-        </form>
+          <div class="login-container">
+            <h1 class="site-title">HAVEN ACADEMIE</h1>
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d555c9127e08d6422ce737a4e037348ff97d896407e95fff17c30f3cd2df849?placeholderIfAbsent=true&apiKey=9f1ecbde15e0486d86b702dc82ff8c91"
+              class="logo-image"
+              alt="Haven Academie Logo"
+            />
+            <form class="login-form" id="login-container">
+              <div class="form-group">
+                <label for="email" class="form-label">E-mailadres:</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-input"
+                  placeholder="Wat is uw e-mailadres?"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="password" class="form-label">Wachtwoord:</label>
+                <input
+                  type="password"
+                  id="password"
+                  class="form-input"
+                  placeholder="Wat is uw wachtwoord?"
+                  required
+                />
+              </div>
+              <button type="submit" class="login-button" id="submitbutton">
+                <span>Inloggen</span>
+              </button>
+            </form>
+          </div>
 
         <script type="module">
           import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
@@ -80,19 +96,19 @@
                     // Signed in 
                     const user = userCredential.user;
                     if (parentEmail(email) == true) {
-                      window.location.replace("parent/parent.html");
+                      window.location.replace("parent/parentdashboard.html");
                       sessionStorage.setItem('parentUnlocked', true);
                       sessionStorage.setItem('loggedEmail', user.email);
                     } else if (studentEmail(email) == true) {
-                      window.location.replace("student/index.html");
+                      window.location.replace("student/studentdashboard.html");
                       sessionStorage.setItem('studentUnlocked', true);
                       sessionStorage.setItem('loggedEmail', user.email);
                     } else if (teacherEmail(email) == true) {
-                      window.location.replace("teacher/teacher.html");
+                      window.location.replace("teacher/teacherdashboard.html");
                       sessionStorage.setItem('teacherUnlocked', true);
                       sessionStorage.setItem('loggedEmail', user.email);
                     } else if (providerEmail(email) == true) {
-                      window.location.replace("provider/provider.html");
+                      window.location.replace("provider/providerdashboard.html");
                       sessionStorage.setItem('providerUnlocked', true);
                       sessionStorage.setItem('loggedEmail', user.email);
                     } else if (email == "1@1.nl") {

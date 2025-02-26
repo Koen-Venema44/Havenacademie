@@ -1,0 +1,96 @@
+    <div class="main-container">
+      <form  class="form-container" id="form-container">
+        <h1 class="form-h1">Activeit</h1>
+        <div class="text-input-container">
+          <div class="input-main">
+            <label class="input-label" for="activityName">Titel</label>
+            <input id="activityName" type="text" class="activity-input" placeholder="Wat wordt de titel van uw activiteit" maxlength="30" required>
+          </div>
+          <div class="input-main">
+            <label class="input-label" for="activityLocation">Locatie</label>
+            <input id="activityLocation" type="text" class="activity-input" placeholder="Waar zal uw activiteit plaatsvinden" maxlength="20" required>
+          </div>
+        </div>
+        <div class="time-input-container">
+          <label class="input-label" for="activityTimeStart">Begintijd</label>
+          <input id="activityTimeStart" type="time" class="time-input" required>
+        </div>
+        <div class="time-input-container">
+          <label class="input-label" for="activityTimeEnd">Eindtijd</label>
+          <input id="activityTimeEnd" type="time" class="time-input" required>
+        </div>
+        <div class="date-input-container">
+          <label class="input-label" for="activityDate">Wat is de datum?</label>
+          <input id="activityDate" class="date-input" type="date" required></input>
+        </div>
+        <div class="input-container">
+          <label class="input-label" for="Description">Beschrijving</label>
+          <textarea type="text" class="text-input-description" id="activityDescription" required> </textarea>
+        </div>
+        <div class="button-container">
+          <button id="submitbutton" class="submitbutton" type="submit">Submit</button>
+          <button class="submitbutton buttonright "id="previewbutton">Voorbeeld Bekijken</button>
+        </div>
+      </form>
+
+      <div class="activity-preview-container" id="activity-preview-container">
+        <h1 class="preview-title"> Voorbeeld Activiteit</h1>
+        <div class="details-img-container">
+          <div class="details-container">
+            <p class="details-p" id="details-p">Details:</p>
+            <p class="location-p" id="location-p"></p>
+            <p class="time-p" id="time-p"></p>
+            <p class="date-p" id="date-p"></p>
+            <p class="aanbieder-p" id="aanbieder-p"></p>
+          </div>
+          <img src="../images/voetbalpreview.png" alt="" class="preview-img">
+        </div>
+        <div class="preview-description" id="preview-description">
+          <p class="preview-description-p" id="description-p"></p>
+        </div>
+        <button class="activity-preview-goback" id="activity-preview-goback">Terug</button>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="voorbeeld-activiteit">
+      <div class="voorbeeld-header">
+        <div class="voorbeeld-bekijken">Voorbeeld Activiteit</div>
+      </div>
+      <div class="beschrijvingframe">
+        <div class="titel1">
+          <div class="logo11">
+            <img class="voetbal-icon" alt="" src="Voetbal.png">
+          </div>
+          <div class="voetbal-parent">
+            <div class="voorbeeld-bekijken">Voetbal</div>
+            <div class="deelnemers1">
+              <img class="person-icon" alt="" src="Person Icon.svg">
+              <div class="div">27/30</div>
+            </div>
+          </div>
+        </div>
+        <div class="details-plaatje">
+          <div class="details">
+            <div class="div">
+              <p class="blank-line">
+                <b class="details2">Details</b>
+                <span>:</span>
+              </p>
+              <p class="blank-line">Locatie: AS80</p>
+              <p class="blank-line">Tijd: 13:00 - 18:00</p>
+              <p class="blank-line">Datum: 5-2-2025</p>
+              <p class="blank-line">Aanbieder: Voetbalpraktijken</p>
+            </div>
+          </div>
+          <img class="image-4-icon" alt="" src="image 4.png">
+        </div>
+        <div class="beschrijving1">
+          <div class="kom-buiten-met">Kom buiten met vrienden voetballen voor een leuke tijd! Dit wordt gedaan op
+            voetbalvereniging AS80 met een hele veld.</div>
+        </div>
+      </div>
+    </div>

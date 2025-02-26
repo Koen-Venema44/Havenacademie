@@ -1,0 +1,248 @@
+:root {
+    --input-label: rgb(94, 94, 94);
+}
+
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: auto;
+}
+
+.form-container {
+    width: 45%;
+    margin-right: auto;
+    margin-left: 2%;
+    margin-top: 2%;
+    min-height: 1080px;
+}
+
+.form-h1 {
+    font-weight: 800;
+    text-align: center;
+    background-color: #B0CC35;
+    padding: 3%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.text-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-main {
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+.activity-input {
+    width: 80%;
+    padding: 3px;
+    border-radius: 4px;
+    border: #B0CC35 1px solid;
+}
+
+.time-input-container {
+    width: 100%;
+}
+
+.time-input {
+    width: 70%;
+    padding: 3px;
+    border-radius: 4px;
+    border: #B0CC35 1px solid;
+    margin-bottom: 2%;
+}
+
+.date-input-container {
+    width: 100%;
+}
+
+.date-input {
+    color: #B0CC35;
+    border: #B0CC35 1px solid;
+    border-radius: 4px;
+    padding: 3px;
+    width: 40%;
+}
+
+.input-container {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-input-description {
+    margin-top: 2%;
+    padding: 1%;
+    border: #B0CC35 1px solid;
+    border-radius: 4px;
+    min-height: 100px;
+    text-wrap: wrap;   
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+}
+
+.submitbutton {
+    width: 48%;
+    background-color: #B0CC35;
+    font-weight: 800;
+    border: none;
+    padding: 2%;
+    border-radius: 4px;
+}
+
+.buttonright {
+    margin-left: 2%;
+}
+
+.submitbutton:hover {background-color: #849926; cursor: grab;}
+
+.input-label {
+    color: var(--input-label);
+}
+
+.activity-preview-container {
+    margin-top: 2%;
+    width: 50%;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2%;
+    border-left: 1px gray solid;
+    margin-bottom: auto;
+}
+
+.preview-title {
+    background-color: #B0CC35;
+    width: 90%;
+    padding-top: 2.7%;
+    padding-bottom: 2.7%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+}
+
+.details-img-container {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.details-container {
+    width: 49%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    border-radius: 4px;
+    border: #B0CC35 1px solid;
+}
+
+.preview-img {
+    height: auto;
+    width: 60%;
+    margin-left: 2%;
+    border: #B0CC35 1px solid;
+    border-radius: 4px;
+}
+
+.preview-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 90%;
+    border-radius: 4px;
+    border: #B0CC35 2px solid;  
+    margin-top: 2%;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+.activity-preview-goback {
+    display: none;
+    width: 90%;
+    background-color: #B0CC35;
+    font-weight: 800;
+    border: none;
+    padding: 2%;
+    border-radius: 4px;
+    margin-bottom: auto;
+    margin-top: 5%;
+}
+
+.activity-preview-goback:hover {background-color: #849926; cursor: grab;}
+
+
+
+.details-p {
+    font-weight: 900;
+}
+
+.location-p {
+    margin-top: 1%;
+}
+
+.time-p {
+    margin-top: 1%;
+}
+
+.date-p {
+    margin-top: 1%;
+}
+
+
+
+.preview-mode {
+    display: none;
+}
+
+
+@media screen and (max-width: 875px) {
+    .activity-preview-container {
+        display: none;
+    }
+
+    .form-container {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.view-preview {
+    display: flex;
+    width: 100%;
+}
+
+.showgoback {
+    display: flex;
+}
+
+.marginbottom0 {
+    margin-bottom: 0;
+}

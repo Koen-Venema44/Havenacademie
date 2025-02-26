@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/provider.css">
+    <link rel="stylesheet" href="../style/provideractiviteitaanmaken.css">
     <title>Welcome to Firebase Hosting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,14 +31,21 @@
     
   </head>
   <body>
-    <div class="header-container">
-      <div class="headerimg">
-        <img src="../images/havenacademie.png" style="height: 50px; width: 220px;" alt="Image not Found">
-      </div>
-      <div class="header-ref-container">
-        <a class="header-ref header-ref-left" href="index.html">Mijn Activiteiten</a>
-        <a class="header-ref header-ref-middle" href="activeiten.html">Activiteiten</a>
-        <a class="header-ref header-ref-right" href="agenda.html">Agenda</a>
+    <div class="header">
+      <a href="providerdashboard.html"><img class="logo-icon" alt="Image not Found" src="../images/havenacademie.png" /></a>
+      <div class="paginas">
+          <a href="providermijnactiviteiten.html">
+              <div class="mijn-activiteiten">
+                  <div class="activiteit-aanmaken">Mijn activiteiten</div>
+                  <div class="selected-bar"></div>
+              </div>
+         </a>
+          <a href="provideractiviteitaanmaken copy.html">
+              <div class="mijn-activiteiten2">
+                  <div class="activiteit-aanmaken">Activiteit aanmaken</div>
+                  <div class="selected-bar"></div>
+              </div>
+          </a>
       </div>
     </div>
 
@@ -97,6 +104,125 @@
     </div>
 
 
+    
+    <div class="activiteit-formulier">
+      <div class="nieuwe-activiteit">Nieuwe Activiteit</div>
+      <div class="activiteit-formulier1">
+        <div class="titel-upload">
+          <div class="titel">Titel:</div>
+          <label class="input-label" for="activityName">Titel:</label>
+          <input id="activityName" type="text" class="activity-input" placeholder="Wat wordt de titel van uw activiteit?" maxlength="30" required>
+        </div>
+
+        <div class="titel-upload">
+          <div class="titel">Deelnemers:</div>
+          <div class="hoeveel-mensen-zullen">Hoeveel mensen zullen er mogen deelnemen aan uw activiteit?</div>
+          <label class="input-label" for="activityPeople">Deelnemers:</label>
+          <input id="activityPeople" type="number" class="people-input" placeholder="WHoeveel mensen zullen er mogen deelnemen aan uw activiteit?" maxlength="20" required>
+        </div>
+
+        <div class="titel-upload">
+          <div class="titel">Locatie:</div>
+          <div class="wat-wordt-de">Waar zal uw activiteit plaatsvinden?</div>
+          <label class="input-label" for="activityLocation">Locatie:</label>
+          <input id="activityLocation" type="text" class="activity-input" placeholder="Waar zal uw activiteit plaatsvinden?" maxlength="20" required>
+        </div>
+
+        <div class="tijd-upload">
+          <div class="begintijd-upload">
+            <div class="titel">Begintijd:</div>
+            <div class="hoelaat-zal-uw">Hoelaat zal uw activiteit beginnen?</div>
+            <label class="input-label" for="activityTimeStart">Begintijd</label>
+            <input id="activityTimeStart" type="time" class="time-input" required>
+          </div>
+          <div class="eindtijd-upload">
+            <div class="titel">Eindtijd:</div>
+            <div class="hoelaat-zal-uw">Hoelaat zal uw activiteit eindigen?</div>
+            <label class="input-label" for="activityTimeEnd">Eindtijd</label>
+            <input id="activityTimeEnd" type="time" class="time-input" required>
+          </div>
+        </div>
+
+        <div class="titel-upload">
+          <div class="titel">Datum:</div>
+          <div class="hoeveel-mensen-zullen">Wanneer zal uw activiteit plaatsvinden?</div>
+          <label class="input-label" for="activityDate">Wat is de datum?</label>
+          <input id="activityDate" class="date-input" type="date" required></input>
+        </div>
+
+        <div class="titel-upload">
+          <div class="titel">Beschrijving:</div>
+          <div class="wat-wordt-de-container">
+            <p class="blank-line">Wat wordt de titel van jouw activiteit?</p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="blank-line">&nbsp;</p>
+            <p class="blank-line">&nbsp;</p>
+          </div>
+
+          <label class="input-label" for="Description">Beschrijving</label>
+          <textarea type="text" class="text-input-description" id="activityDescription" required> </textarea>
+        </div>
+        <div class="logo-upload">
+          <div class="titel">Logo:</div>
+          <div class="wat-wordt-de">Wat wordt de logo van uw activiteit?</div>
+          <div class="logoframe">
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Voetbal.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Koken.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Dansen.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Muziek.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Creatief.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Mindfulness.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Ambacht.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Natuur.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Coaching.png">
+            </div>
+            <div class="logo1">
+              <img class="voetbal-icon" alt="" src="Technology.png">
+            </div>
+          </div>
+        </div>
+        
+        <div class="logo-upload">
+          <div class="titel">Foto's & Video's:</div>
+          <div class="wat-wordt-de">
+            <p class="blank-line">Wat voor foto's en/of video's komen</p>
+            <p class="blank-line">bij uw activiteit?</p>
+          </div>
+          <img class="fotos-videos-upload-child" alt="" src="Group 14.svg">
+        </div>
+      </div>
+
+      <div class="voorbeeld-bekijken-knop">
+        <div class="voorbeeld-bekijken-wrapper">
+          <div class="voorbeeld-bekijken">Voorbeeld bekijken</div>
+          <button class="submitbutton buttonright "id="previewbutton">Voorbeeld Bekijken</button>
+        </div>
+      </div>
+
+      <div class="voorbeeld-bekijken-knop">
+        <div class="voorbeeld-bekijken-wrapper">
+          <div class="voorbeeld-bekijken">Activiteit aanmaken</div>
+          <button id="submitbutton" class="submitbutton" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
     
 <!-- Modal 1 -->
 
