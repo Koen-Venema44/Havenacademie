@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Firebase Hosting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/11.1.0/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/11.1.0/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-functions-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-messaging-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-remote-config-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-performance-compat.js"></script>
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <link rel="stylesheet" href="../style/style.css?v=3">
+  <link rel="stylesheet" href="../style/activiteit copy.css">
+</head>
+
+<body>
+  <div class="aanbieder-desktop-mijn-activ">
+    <div class="header">
+        <a href="providerdashboard.html"><img class="logo-icon" alt="Image not Found" src="../images/havenacademie.png" /></a>
+        <div class="paginas">
+            <a href="teacheractiviteiten.html">
+                <div class="mijn-activiteiten">
+                    <div class="activiteit-aanmaken">Activiteiten</div>
+                    <div class="selected-bar"></div>
+                </div>
+           </a>
+        </div>
+      </div>
+
+    <div class="body" id="main-container">
+      <div class="activiteitenframe">
+        <div class="activiteiten" id="activity-container">
+            <a class="activity">
+                <div class="icon">
+                    <img class="voetbal-icon" alt="" src="../images/Voetbal.png">
+                </div>
+                <div class="info">
+                <div class="bovenlijn">
+                    <div class="voetbal">${activity.Name}</div>
+                    <div class="person-icon-parent">
+                    <img class="person-icon" alt="" src="../images/Person Icon.svg">
+
+                    <div class="voetbal">27/30</div>
+                    </div>
+                </div>
+                <img class="info-child" alt="" src="Line 11.svg">
+
+                <div class="onderlijn">
+                    <div class="voetbal">${activity.TimeStart} - ${activity.TimeEnd}</div>
+                    <div class="bongerdstraat-1">${activity.Location}</div>
+                </div>
+                </div>
+            </a>  
+        </div>
+      </div>
+      <div class="beschrijvingframe" id="activity-description-container">
+        <div class="titel">
+            <div class="logo">
+              <img class="voetbal-icon" alt="" src="../images/voetbal.png">
+            </div>
+            <div class="voetbal-parent">
+              <div class="voetbal20">${activity.Name}</div>
+              <div class="deelnemers">
+                <img class="person-icon" alt="" src="../images/Person Icon.svg">
+                <div class="voetbal">27/30</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="details-plaatje">
+            <div class="details">
+              <div class="voetbal">
+                <p class="tijd-1300-">
+                  <b class="details2">Details</b>
+                  <span>:</span>
+                </p>
+                <p class="tijd-1300-">Locatie: ${activity.Location}</p>
+                <p class="tijd-1300-">Tijd: ${activity.TimeStart} - ${activity.TimeEnd}</p>
+                <p class="tijd-1300-">Datum: ${activity.Date}</p>
+                <p class="tijd-1300-">Aanbieder: Voetbalpraktijken</p>
+              </div>
+            </div>
+            <img class="image-4-icon" id="description" alt="" src="../images/voetbalpreview.png">
+          </div>
+          
+          <div class="beschrijving">
+            <div class="kom-buiten-met">${activity.Description}</div>
+          </div>
+
+          <button class="activity-choose" id="activity-choose"> Bekijk ingeschreven leerlingen </button>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

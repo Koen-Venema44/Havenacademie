@@ -1,206 +1,258 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.1.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.1.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-performance-compat.js"></script>
-    <!-- 
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Firebase Hosting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/11.1.0/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/11.1.0/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-functions-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-messaging-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-remote-config-compat.js"></script>
+  <script defer src="/__/firebase/11.1.0/firebase-performance-compat.js"></script>
+  <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <link rel="stylesheet" href="../style/style.css?v=3">
-    <link rel="stylesheet" href="../style/activiteit.css?v=3">
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <link rel="stylesheet" href="../style/style.css?v=3">
+  <link rel="stylesheet" href="../style/activiteit copy.css">
+</head>
 
-    
-  </head>
-  <body>
-  <div class="header-container">
-    <div class="headerimg">
-      <img src="../images/havenacademie.png" style="height: 50px; width: 220px;" alt="Image not Found">
+<body>
+  <div class="aanbieder-desktop-mijn-activ">
+    <div class="header">
+      <a href="studentdashboard.html"><img class="logo-icon" alt="Image not Found"
+          src="../images/havenacademie.png" /></a>
+      <div class="paginas">
+        <a href="studentmijnactiviteiten.html">
+          <div class="mijn-activiteiten">
+            <div class="activiteit-aanmaken">Mijn activiteiten</div>
+            <div class="selected-bar"></div>
+          </div>
+        </a>
+        <a href="studentactiviteiten.html">
+          <div class="mijn-activiteiten2">
+            <div class="activiteit-aanmaken">Activiteiten</div>
+            <div class="selected-bar"></div>
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="header-ref-container">
-      <a class="header-ref header-ref-left" href="studentmijnactiviteiten copy.html">Mijn Activiteiten</a>
-      <a class="header-ref header-ref-middle" href="studentactiviteiten copy.html">Activiteiten</a>
-      <a class="header-ref header-ref-right" href="index.html">Agenda</a>
+
+    <div class="body" id="main-container">
+      <div class="activiteitenframe">
+        <div class="activiteiten" id="activity-container">
+
+
+        </div>
+      </div>
+      <div class="beschrijvingframe" id="activity-description-container">
+        
+      </div>
     </div>
   </div>
 
-  <div class="main-container" id="main-container">
-    <div class="activity-container" id="activity-container">
-      
-        
-    </div>
-    <div class="activity-description-container" id="activity-description-container">
-
-    </div>
-  </div> 
-  
-
-    
 
 
-<!-- CSS -->
-    <script type="module"> 
-      // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-            import{ getDatabase, child, get, set, ref, onValue } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
 
-            // Your web app's Firebase configuration
-            const firebaseConfig = {
-              apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
-              authDomain: "havenacademie.firebaseapp.com",
-              databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app",
-              projectId: "havenacademie",
-              messagingSenderId: "344623421086",
-              appId: "1:344623421086:web:62019190a8697cd466cd8f"
-            };
-              const app = initializeApp(firebaseConfig);
-              const db = getDatabase(app);
-              const activitiesRef = ref(db, "activity");
-              const main = document.getElementById("main-container");
-              const descriptionContainer = document.querySelector(".activity-description-container");
-              const sanitizedEmail = sessionStorage.getItem('loggedEmail').replace(/[.#$[\]@]/g, "_");
+  <!-- CSS -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+    import { getDatabase, child, get, set, ref, onValue } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-              get(activitiesRef)
-                .then((snapshot) => {
-                  if (snapshot.exists()) {
-                    const activities = snapshot.val();
-                    displayActivities(activities);
-                    console.log(activities);
-                  } else {
-                    console.log("No activities found.");
-                  }
-                })
-                .catch((error) => {
-                  console.error("Error fetching activities:", error);
-                });
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
+      authDomain: "havenacademie.firebaseapp.com",
+      databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "havenacademie",
+      messagingSenderId: "344623421086",
+      appId: "1:344623421086:web:62019190a8697cd466cd8f"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const activitiesRef = ref(db, "activity");
+    const main = document.getElementById("main-container");
+    const descriptionContainer = document.querySelector(".beschrijvingframe");
+    const sanitizedEmail = sessionStorage.getItem('loggedEmail').replace(/[.#$[\]@]/g, "_");
+
+    get(activitiesRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const activities = snapshot.val();
+          displayActivities(activities);
+          console.log(activities);
+        } else {
+          console.log("No activities found.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching activities:", error);
+      });
 
 
-                function showActivityDetails(activity) {
-                            const descriptionContainer = document.querySelector(".activity-description-container");
-                            descriptionContainer.innerHTML = `
-                                <h1 class="description-h2"> ${activity.Name}</h1>
-                                <div class="details-img-container">
-                                    <div class="details-container">
-                                        <p class="details-p" id="details-p">Details:</p>
-                                        <p class="location-p" id="location-p">${activity.Location}</p>
-                                        <p class="time-p" id="time-p">${activity.TimeStart} - ${activity.TimeEnd}</p>
-                                        <p class="date-p" id="date-p">${activity.Date}</p>
-                                        <p class="aanbieder-p" id="aanbieder-p"></p>
+    function showActivityDetails(activity) {
+      const descriptionContainer = document.querySelector(".beschrijvingframe");
+      descriptionContainer.innerHTML = `
+                                <div class="titel">
+                                  <div class="logo">
+                                    <img class="voetbal-icon" alt="" src="../images/voetbal.png">
+                                  </div>
+                                  <div class="voetbal-parent">
+                                    <div class="voetbal20">${activity.Name}</div>
+                                    <div class="deelnemers">
+                                      <img class="person-icon" alt="" src="../images/Person Icon.svg">
+                                      <div class="voetbal">27/30</div>
                                     </div>
-                                    <img src="../images/voetbalpreview.png" alt="" class="preview-img">
+                                  </div>
                                 </div>
-                                <div class="description" id="description">
-                                    <p class="description-p" id="description-p">${activity.Description}</p>
-                                </div>
-                                <button class="activity-choose" id="activity-choose"> Inschrijven </button>
-                                <button class="activity-goback" id="activity-goback">Terug</button>`; 
 
-                                if (window.innerWidth < 1250) {
-                            document.getElementById("activity-description-container").classList.add("view-preview");
-                            document.getElementById("activity-container").classList.add("preview-mode");
-                            document.getElementById("activity-goback").classList.add("showgoback");
-                            document.getElementById("description").classList.add("marginbottom0");
-                            document.getElementById("activity-choose").classList.add("small");
+                                <div class="details-plaatje">
+                                  <div class="details">
+                                    <div class="voetbal">
+                                      <p class="tijd-1300-">
+                                        <b class="details2">Details</b>
+                                        <span>:</span>
+                                      </p>
+                                      <p class="tijd-1300-">Locatie: ${activity.Location}</p>
+                                      <p class="tijd-1300-">Tijd: ${activity.TimeStart} - ${activity.TimeEnd}</p>
+                                      <p class="tijd-1300-">Datum: ${activity.Date}</p>
+                                      <p class="tijd-1300-">Aanbieder: Voetbalpraktijken</p>
+                                    </div>
+                                  </div>
+                                  <img class="image-4-icon" id="description" alt="" src="../images/voetbalpreview.png">
+                                </div>
                                 
-                            
-                        } else {
-                            const descriptionContainer = document.querySelector(".activity-description-container");
-                            descriptionContainer.innerHTML = `
-                                <h1 class="description-h2"> ${activity.Name}</h1>
-                                <div class="details-img-container">
-                                    <div class="details-container">
-                                        <p class="details-p" id="details-p">Details:</p>
-                                        <p class="location-p" id="location-p">${activity.Location}</p>
-                                        <p class="time-p" id="time-p">${activity.TimeStart} - ${activity.TimeEnd}</p>
-                                        <p class="date-p" id="date-p">${activity.Date}</p>
-                                        <p class="aanbieder-p" id="aanbieder-p"></p>
-                                    </div>
-                                    <img src="../images/voetbalpreview.png" alt="" class="preview-img">
+                                <div class="beschrijving">
+                                  <div class="kom-buiten-met">${activity.Description}</div>
                                 </div>
-                                <div class="description" id="description">
-                                    <p class="description-p" id="description-p">${activity.Description}</p>
-                                </div>
+
                                 <button class="activity-choose" id="activity-choose"> Inschrijven </button>
                                 <button class="activity-goback" id="activity-goback">Terug</button>`;
-                        }
 
-                        document.getElementById("activity-goback").addEventListener('click', () => {
-                                document.getElementById("activity-description-container").classList.remove("view-preview");
-                                document.getElementById("activity-container").classList.remove("preview-mode");
-                                document.getElementById("activity-goback").classList.remove("showgoback");
-                                document.getElementById("description").classList.remove("marginbottom0");
-                                document.getElementById("activity-choose").classList.remove("small");
-                            }); 
-                  }
+      if (window.innerWidth < 1442) {
+        document.getElementById("activity-description-container").classList.add("view-preview");
+        document.getElementById("activity-container").classList.add("preview-mode");
+        document.getElementById("activity-goback").classList.add("showgoback");
+        document.getElementById("description").classList.add("marginbottom0");
+        document.getElementById("activity-choose").classList.add("small");
 
 
-                  function displayActivities(activities) {
-                    const activityContainer = document.querySelector(".activity-container");
-                    activityContainer.innerHTML = ""; // Clear previous content
+      } else {
+        const descriptionContainer = document.querySelector(".beschrijvingframe");
+        descriptionContainer.innerHTML = `
+                                <div class="titel">
+                                  <div class="logo">
+                                    <img class="voetbal-icon" alt="" src="../images/voetbal.png">
+                                  </div>
+                                  <div class="voetbal-parent">
+                                    <div class="voetbal20">${activity.Name}</div>
+                                    <div class="deelnemers">
+                                      <img class="person-icon" alt="" src="../images/Person Icon.svg">
+                                      <div class="voetbal">27/30</div>
+                                    </div>
+                                  </div>
+                                </div>
 
-                    Object.keys(activities).forEach((id) => {  // Loop through activities
-                      const activity = activities[id];
+                                <div class="details-plaatje">
+                                  <div class="details">
+                                    <div class="voetbal">
+                                      <p class="tijd-1300-">
+                                        <b class="details2">Details</b>
+                                        <span>:</span>
+                                      </p>
+                                      <p class="tijd-1300-">Locatie: ${activity.Location}</p>
+                                      <p class="tijd-1300-">Tijd: ${activity.TimeStart} - ${activity.TimeEnd}</p>
+                                      <p class="tijd-1300-">Datum: ${activity.Date}</p>
+                                      <p class="tijd-1300-">Aanbieder: Voetbalpraktijken</p>
+                                    </div>
+                                  </div>
+                                  <img class="image-4-icon" id="description" alt="" src="../images/voetbalpreview.png">
+                                </div>
+                                
+                                <div class="beschrijving">
+                                  <div class="kom-buiten-met">${activity.Description}</div>
+                                </div>
 
-                      const activityElement = document.createElement("a");
-                      activityElement.classList.add("activity");
-                      activityElement.innerHTML = `
-                        <img class="activity-img" src="../images/voetbal.png" alt="">
-                        <div class="text-container-activity">
-                          <h1 class="activity-name">${activity.Name}</h1>
-                          <div class="line"></div>
-                          <div class="p-container">
-                            <p class="p-activity">${activity.TimeStart}</p><p class="p-activity"> ${activity.TimeEnd} </p>
-                            <p class="p-activity-right">${activity.Location}</p>
+                                <button class="activity-choose" id="activity-choose"> Inschrijven </button>
+                                `;
+      }
+
+      document.getElementById("activity-goback").addEventListener('click', () => {
+        document.getElementById("activity-description-container").classList.remove("view-preview");
+        document.getElementById("activity-container").classList.remove("preview-mode");
+        document.getElementById("activity-goback").classList.remove("showgoback");
+        document.getElementById("description").classList.remove("marginbottom0");
+        document.getElementById("activity-choose").classList.remove("small");
+      });
+    }
+
+
+    function displayActivities(activities) {
+      const activityContainer = document.querySelector(".activiteiten");
+      activityContainer.innerHTML = ""; // Clear previous content
+
+      Object.keys(activities).forEach((id) => {  // Loop through activities
+        const activity = activities[id];
+
+        const activityElement = document.createElement("a");
+        activityElement.classList.add("activity");
+        activityElement.innerHTML = `
+                          <div class="icon">
+                              <img class="voetbal-icon" alt="" src="../images/Voetbal.png">
                           </div>
-                        </div>
+                          <div class="info">
+                            <div class="bovenlijn">
+                              <div class="voetbal">${activity.Name}</div>
+                              <div class="person-icon-parent">
+                                <img class="person-icon" alt="" src="../images/Person Icon.svg">
+
+                                <div class="voetbal">27/30</div>
+                              </div>
+                            </div>
+                            <img class="info-child" alt="" src="Line 11.svg">
+
+                            <div class="onderlijn">
+                              <div class="voetbal">${activity.TimeStart} - ${activity.TimeEnd}</div>
+                              <div class="bongerdstraat-1">${activity.Location}</div>
+                            </div>
+                          </div>
                       `;
-                      // Add click event to show activity details
-                      activityElement.addEventListener("click", () => {
-                        showActivityDetails(activity);
-                        const registerbutton = document.getElementById("activity-choose");
-                        registerbutton.addEventListener('click', (e) => {
-                          e.preventDefault();
+        // Add click event to show activity details
+        activityElement.addEventListener("click", () => {
+          showActivityDetails(activity);
+          const registerbutton = document.getElementById("activity-choose");
+          registerbutton.addEventListener('click', (e) => {
+            e.preventDefault();
 
-                          const activity = activities[id];
-                            set(ref(db, 'users/students/' + "/" + sanitizedEmail + '/' + 'registeredActivities' + "/" + id), {
-                              activity
-                            }); alert('succesfull');
-                        });
-                      });
-                      activityContainer.appendChild(activityElement);  // Add to page
+            const activity = activities[id];
+            set(ref(db, 'users/students/' + "/" + sanitizedEmail + '/' + 'registeredActivities' + "/" + id), {
+              activity
+            }); alert('succesfull');
+          });
+        });
+        activityContainer.appendChild(activityElement);  // Add to page
+      });
+    }
+  </script>
+  <script src="../javaScript/index.js"></script>
+  <script type="module" src="../javaScript/activity.js"></script>
+</body>
 
-                      
-                      
-                    });
-                  }
-
-
-
-
-
-              
-           
-    </script>
-    <script src="../javaScript/index.js"></script>
-    <script type="module" src="../javaScript/activity.js"></script>
-  </body>
 </html>
