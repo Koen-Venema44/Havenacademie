@@ -24,70 +24,247 @@
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <link rel="stylesheet" href="../style/style.css?v=3">
-    <link rel="stylesheet" href="../style/dashboard.css">
-
-    
+    <link rel="stylesheet" href="../style/dashboard copy.css">
   </head>
   <body>
-  <div class="header-container">
-    <div class="headerimg">
-      <img src="../images/havenacademie.png" style="height: 50px; width: 220px;" alt="Image not Found">
-    </div>
-    <div class="header-ref-container">
-      <a class="header-ref header-ref-left" href="mijn-activiteiten.html">Mijn Activiteiten</a>
-      <a class="header-ref header-ref-middle" href="activiteiten.html">Activiteiten</a>
-      <a class="header-ref header-ref-right" href="studentdashboard copy.html">Dashboard</a>
-    </div>
-  </div>
-
-  <div class="main-container" id="main-container">
-    <div class="activity-container">
-    
-    </div>
-    <div class="activity-new-container">
-      <div class="search-container">
-        <h1 class="search-header"> Hallo </h1>
-        <input type="search" class="search" placeholder="Activiteit Opzoeken:">
+    <div class="aanbieder-desktop-dashboard">
+      <div class="header">
+        <a href="studentdashboard.html"><img class="logo-icon" alt="Image not Found" src="../images/havenacademie.png" /></a>
+        <div class="paginas">
+            <a href="studentmijnactiviteiten.html">
+                <div class="mijn-activiteiten">
+                    <div class="activiteit-aanmaken">Mijn activiteiten</div>
+                    <div class="selected-bar"></div>
+                </div>
+           </a>
+            <a href="studentactiviteiten.html">
+                <div class="mijn-activiteiten2">
+                    <div class="activiteit-aanmaken">Activiteiten</div>
+                    <div class="selected-bar"></div>
+                </div>
+            </a>
+        </div>
       </div>
-      <div class="new-activity-main">
-        <h1 class="new-activity-header"> Nieuwe Activiteiten: </h1>
-        <div class="new-activity-container">
 
+      <div class="body">
+        <div class="aankomende-activiteiten">
+          <div class="aankomende-activiteiten1">
+            <div class="div">Aankomende activiteiten:</div>
+          </div>
+          <div class="activiteit-groot">
+            <img class="image-4-icon" alt="" src="../images/voetbalpreview.png" />
+            <div class="activiteit">
+              <div class="icon1">
+                <img class="voetbal-icon1" alt="" src="../images/voetbal.png" />
+              </div>
+              <div class="voetbal-parent">
+                <div class="voetbal">Voetbal</div>
+                <div class="person-icon-parent">
+                  <img class="person-icon" alt="" src="../images/Person Icon.svg" />
+                  <div class="sport-spel">27/30</div>
+                </div>
+                <img class="frame-child" alt="" src="Line 11.svg" />
+                <div class="sport-spel">13:00 - 14:00</div>
+                <div class="bongerdstraat-1">Bongerdstraat 1</div>
+              </div>
+            </div>
+          </div>          
+          <div class="activiteit-groot">
+            <img class="image-4-icon" alt="" src="../images/voetbalpreview.png" />
+            <div class="activiteit">
+              <div class="icon1">
+                <img class="voetbal-icon1" alt="" src="../images/voetbal.png" />
+              </div>
+              <div class="voetbal-parent">
+                <div class="voetbal">Voetbal</div>
+                <div class="person-icon-parent">
+                  <img class="person-icon" alt="" src="../images/Person Icon.svg" />
+                  <div class="sport-spel">27/30</div>
+                </div>
+                <img class="frame-child" alt="" src="Line 11.svg" />
+                <div class="sport-spel">13:00 - 14:00</div>
+                <div class="bongerdstraat-1">Bongerdstraat 1</div>
+              </div>
+            </div>
+          </div>
+          <div class="activiteit-groot">
+            <img class="image-4-icon" alt="" src="../images/voetbalpreview.png" />
+            <div class="activiteit">
+              <div class="icon1">
+                <img class="voetbal-icon1" alt="" src="../images/voetbal.png" />
+              </div>
+              <div class="voetbal-parent">
+                <div class="voetbal">Voetbal</div>
+                <div class="person-icon-parent">
+                  <img class="person-icon" alt="" src="../images/Person Icon.svg" />
+                  <div class="sport-spel">27/30</div>
+                </div>
+                <img class="frame-child" alt="" src="Line 11.svg" />
+                <div class="sport-spel">13:00 - 14:00</div>
+                <div class="bongerdstraat-1">Bongerdstraat 1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hoofdframe">
+
+          <div class="welkombericht">
+            <div class="welkom-terug-steve">Welkom terug, Steve Jobs</div>
+          </div>
+
+          <div class="activiteiten-zoekbalk">
+            <div class="titel-upload">
+              <input id="activityName" type="text" class="zoek-een-activiteit" placeholder="Zoek een activiteit op" maxlength="50" required>
+              
+              <button type="submit">
+                <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+              </button>
+            </div>
+
+            <div class="filters">
+              <img class="icon" alt="" src="../images/filters/Filter.png" />
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Voetbal.png" />
+                <div class="sport-spel">Sport</div>
+              </div>
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Koken.png" />
+                <div class="sport-spel">Koken</div>
+              </div>
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Dansen.png" />
+                <div class="sport-spel">Dans</div>
+              </div>
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Muziek.png" />
+                <div class="sport-spel">Muziek</div>
+              </div>
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Creatief.png" />
+                <div class="sport-spel">Creatief</div>
+              </div>
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Mindfulness.png" />
+                <div class="sport-spel">Mindfulness</div>
+              </div>
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Ambacht.png" />
+                <div class="sport-spel">Ambacht</div>
+              </div>
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Natuur.png" />
+                <div class="sport-spel">Natuur</div>
+              </div>
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Coaching.png" />
+                <div class="sport-spel">Coaching</div>
+              </div>
+              <div class="filteroptie">
+                <img class="voetbal-icon" alt="" src="../images/filters/Technology.png" />
+                <div class="sport-spel">Technologie</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nieuwe-activiteiten">
+            <div class="nieuwe-activiteiten-titel">
+              <div class="sport-spel">Nieuwe activiteiten:</div>
+            </div>
+            <div class="nieuwe-activiteiten-lijst">
+              <div class="activiteit-groot">
+                <img class="image-4-icon" alt="" src="../images/voetbalpreview.png" />
+                <div class="activiteit">
+                  <div class="icon1">
+                    <img class="voetbal-icon1" alt="" src="../images/voetbal.png" />
+                  </div>
+                  <div class="voetbal-parent">
+                    <div class="voetbal">Voetbal</div>
+                    <div class="person-icon-parent">
+                      <img class="person-icon" alt="" src="../images/Person Icon.svg" />
+                      <div class="sport-spel">27/30</div>
+                    </div>
+                    <img class="frame-child" alt="" src="Line 11.svg" />
+                    <div class="sport-spel">13:00 - 14:00</div>
+                    <div class="bongerdstraat-1">Bongerdstraat 1</div>
+                  </div>
+                </div>
+              </div>
+              <div class="activiteit-groot">
+                <img class="image-4-icon" alt="" src="../images/voetbalpreview.png" />
+                <div class="activiteit">
+                  <div class="icon1">
+                    <img class="voetbal-icon1" alt="" src="../images/voetbal.png" />
+                  </div>
+                  <div class="voetbal-parent">
+                    <div class="voetbal">Voetbal</div>
+                    <div class="person-icon-parent">
+                      <img class="person-icon" alt="" src="../images/Person Icon.svg" />
+                      <div class="sport-spel">27/30</div>
+                    </div>
+                    <img class="frame-child" alt="" src="Line 11.svg" />
+                    <div class="sport-spel">13:00 - 14:00</div>
+                    <div class="bongerdstraat-1">Bongerdstraat 1</div>
+                  </div>
+                </div>
+              </div>
+              <div class="activiteit-groot">
+                <img class="image-4-icon" alt="" src="../images/voetbalpreview.png" />
+                <div class="activiteit">
+                  <div class="icon1">
+                    <img class="voetbal-icon1" alt="" src="../images/voetbal.png" />
+                  </div>
+                  <div class="voetbal-parent">
+                    <div class="voetbal">Voetbal</div>
+                    <div class="person-icon-parent">
+                      <img class="person-icon" alt="" src="../images/Person Icon.svg" />
+                      <div class="sport-spel">27/30</div>
+                    </div>
+                    <img class="frame-child" alt="" src="Line 11.svg" />
+                    <div class="sport-spel">13:00 - 14:00</div>
+                    <div class="bongerdstraat-1">Bongerdstraat 1</div>
+                  </div>
+                </div>
+              </div>
+              <div class="activiteit-groot">
+                <img class="image-4-icon" alt="" src="../images/voetbalpreview.png" />
+                <div class="activiteit">
+                  <div class="icon1">
+                    <img class="voetbal-icon1" alt="" src="../images/voetbal.png" />
+                  </div>
+                  <div class="voetbal-parent">
+                    <div class="voetbal">Voetbal</div>
+                    <div class="person-icon-parent">
+                      <img class="person-icon" alt="" src="../images/Person Icon.svg" />
+                      <div class="sport-spel">27/30</div>
+                    </div>
+                    <img class="frame-child" alt="" src="Line 11.svg" />
+                    <div class="sport-spel">13:00 - 14:00</div>
+                    <div class="bongerdstraat-1">Bongerdstraat 1</div>
+                  </div>
+                </div>
+              </div>
+              <div class="activiteit-groot">
+                <img class="image-4-icon" alt="" src="../images/voetbalpreview.png" />
+                <div class="activiteit">
+                  <div class="icon1">
+                    <img class="voetbal-icon1" alt="" src="../images/voetbal.png" />
+                  </div>
+                  <div class="voetbal-parent">
+                    <div class="voetbal">Voetbal</div>
+                    <div class="person-icon-parent">
+                      <img class="person-icon" alt="" src="../images/Person Icon.svg" />
+                      <div class="sport-spel">27/30</div>
+                    </div>
+                    <img class="frame-child" alt="" src="Line 11.svg" />
+                    <div class="sport-spel">13:00 - 14:00</div>
+                    <div class="bongerdstraat-1">Bongerdstraat 1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div> 
-  
-
-    
-
-
-<!-- CSS -->
-    <script type="module"> 
-      // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-            import{ getDatabase, child, get, set, ref, onValue } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-
-            // Your web app's Firebase configuration
-            const firebaseConfig = {
-              apiKey: "AIzaSyBNNdYK4IfN_45gX2P_op7HGdkancdC5XA",
-              authDomain: "havenacademie.firebaseapp.com",
-              databaseURL: "https://havenacademie-default-rtdb.europe-west1.firebasedatabase.app",
-              projectId: "havenacademie",
-              messagingSenderId: "344623421086",
-              appId: "1:344623421086:web:62019190a8697cd466cd8f"
-            };
-              const app = initializeApp(firebaseConfig);
-              const db = getDatabase(app);
-              const activitiesRef = ref(db, "activity");
-
-
-              
-           
-    </script>
-    <script src="../javaScript/index.js"></script>
   </body>
 </html>
