@@ -48,70 +48,16 @@
     <div class="body" id="main-container">
       <div class="activiteitenframe">
         <div class="activiteiten" id="activity-container">
-            <a class="activity">
-                <div class="icon">
-                    <img class="voetbal-icon" alt="" src="../images/Voetbal.png">
-                </div>
-                <div class="info">
-                <div class="bovenlijn">
-                    <div class="voetbal">${activity.Name}</div>
-                    <div class="person-icon-parent">
-                    <img class="person-icon" alt="" src="../images/Person Icon.svg">
 
-                    <div class="voetbal">27/30</div>
-                    </div>
-                </div>
-                <img class="info-child" alt="" src="Line 11.svg">
-
-                <div class="onderlijn">
-                    <div class="voetbal">${activity.TimeStart} - ${activity.TimeEnd}</div>
-                    <div class="bongerdstraat-1">${activity.Location}</div>
-                </div>
-                </div>
-            </a>  
         </div>
       </div>
       <div class="beschrijvingframe" id="activity-description-container">
-        <div class="titel">
-            <div class="logo">
-              <img class="voetbal-icon" alt="" src="../images/voetbal.png">
-            </div>
-            <div class="voetbal-parent">
-              <div class="voetbal20">${activity.Name}</div>
-              <div class="deelnemers">
-                <img class="person-icon" alt="" src="../images/Person Icon.svg">
-                <div class="voetbal">27/30</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="details-plaatje">
-            <div class="details">
-              <div class="voetbal">
-                <p class="tijd-1300-">
-                  <b class="details2">Details</b>
-                  <span>:</span>
-                </p>
-                <p class="tijd-1300-">Locatie: ${activity.Location}</p>
-                <p class="tijd-1300-">Tijd: ${activity.TimeStart} - ${activity.TimeEnd}</p>
-                <p class="tijd-1300-">Datum: ${activity.Date}</p>
-                <p class="tijd-1300-">Aanbieder: Voetbalpraktijken</p>
-              </div>
-            </div>
-            <img class="image-4-icon" id="description" alt="" src="../images/voetbalpreview.png">
-          </div>
-          
-          <div class="beschrijving">
-            <div class="kom-buiten-met">${activity.Description}</div>
-          </div>
-
-          <button class="activity-choose" id="activity-choose"> Bekijk ingeschreven leerlingen </button>
       </div>
     </div>
   </div>
 
 
-
+<script src="../javaScript/mijn-activiteiten-teacher.js" type="module"></script>
 </body>
 
 </html>

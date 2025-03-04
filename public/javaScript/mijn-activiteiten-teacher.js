@@ -101,15 +101,24 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/1
         const activityElement = document.createElement("a");
         activityElement.classList.add("activity");
         activityElement.innerHTML = `
-          <img class="activity-img" src="../images/voetbal.png" alt="">
-          <div class="text-container-activity">
-            <h1 class="activity-name">${activity.Name}</h1>
-            <div class="line"></div>
-            <div class="p-container">
-              <p class="p-activity">${activity.TimeStart}</p><p class="p-activity"> ${activity.TimeEnd} </p>
-              <p class="p-activity-right">${activity.Location}</p>
-            </div>
-          </div>
+          <div class="icon">
+                    <img class="voetbal-icon" alt="" src="../images/Voetbal.png">
+                </div>
+                <div class="info">
+                <div class="bovenlijn">
+                    <div class="voetbal">${activity.Name}</div>
+                    <div class="person-icon-parent">
+                    <img class="person-icon" alt="" src="../images/Person Icon.svg">
+
+                    <div class="voetbal">27/30</div>
+                    </div>
+                </div>
+                <img class="info-child" alt="" src="Line 11.svg">
+
+                <div class="onderlijn">
+                    <div class="voetbal">${activity.TimeStart} - ${activity.TimeEnd}</div>
+                    <div class="bongerdstraat-1">${activity.Location}</div>
+                </div>
         `;
         // Add click event to show activity details
         activityElement.addEventListener("click", () => {
@@ -126,20 +135,43 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/1
     }
 
     function showActivityDetails(activity) {
-        const descriptionContainer = document.querySelector(".activity-description-container");
+        const descriptionContainer = document.querySelector(".beschrijvingframe");
         descriptionContainer.innerHTML = `
-                <div class="details-container">
-                    <p class="details-p" id="details-p">Details:</p>
-                    <p class="location-p" id="location-p">${activity.Location}</p>
-                    <p class="time-p" id="time-p">${activity.TimeStart} - ${activity.TimeEnd}</p>
-                    <p class="date-p" id="date-p">${activity.Date}</p>
-                    <p class="aanbieder-p" id="aanbieder-p"></p>
-                </div>
-            <h1 class="details-h1" > Ingeschreven Leerlingen </h1>
-            <div class="students-list" id="students-list">
-
+                <div class="titel">
+            <div class="logo">
+              <img class="voetbal-icon" alt="" src="../images/voetbal.png">
             </div>
-            <button class="activity-goback" id="activity-goback">Terug</button>
+            <div class="voetbal-parent">
+              <div class="voetbal20">${activity.Name}</div>
+              <div class="deelnemers">
+                <img class="person-icon" alt="" src="../images/Person Icon.svg">
+                <div class="voetbal">27/30</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="details-plaatje">
+            <div class="details">
+              <div class="voetbal">
+                <p class="tijd-1300-">
+                  <b class="details2">Details</b>
+                  <span>:</span>
+                </p>
+                <p class="tijd-1300-">Locatie: ${activity.Location}</p>
+                <p class="tijd-1300-">Tijd: ${activity.TimeStart} - ${activity.TimeEnd}</p>
+                <p class="tijd-1300-">Datum: ${activity.Date}</p>
+                <p class="tijd-1300-">Aanbieder: Voetbalpraktijken</p>
+              </div>
+            </div>
+            <img class="image-4-icon" id="description" alt="" src="../images/voetbalpreview.png">
+          </div>
+          
+          <div class="beschrijving">
+            <div class="kom-buiten-met">${activity.Description}</div>
+          </div>
+
+          <button class="activity-choose" id="activity-choose"> Bekijk ingeschreven leerlingen </button>
+      </div>
         `;
 
         getStudentsByActivity(activity.ID);
