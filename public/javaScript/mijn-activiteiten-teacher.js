@@ -91,7 +91,7 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/1
 
 
     function displayActivities(activities) {
-      const activityContainer = document.querySelector(".activity-container");
+      const activityContainer = document.querySelector(".activiteitenframe");
       activityContainer.innerHTML = ""; // Clear previous content
 
       Object.keys(activities).forEach((id) => {  // Loop through activities
@@ -110,7 +110,7 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/1
                     <div class="person-icon-parent">
                     <img class="person-icon" alt="" src="../images/Person Icon.svg">
 
-                    <div class="voetbal">27/30</div>
+                    <div class="voetbal">${registeredStudents.length}/30</div>
                     </div>
                 </div>
                 <img class="info-child" alt="" src="Line 11.svg">

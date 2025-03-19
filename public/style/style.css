@@ -94,6 +94,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   /* header items  */ 
+  
   .logo-icon {
     width: 203px;
     position: relative;
@@ -168,6 +169,7 @@
     color: white;
   }
 
+  .header-ref:hover {color: #cccccc;}
   /* main container for the afterschool activities */ 
   
  
